@@ -1,7 +1,7 @@
 coreBOSDocs
 ===========
 
-dokuwiki documentation project for coreBOS
+dokuwiki documentation project for coreBOS: http://corebos.tsolucio.com/documentation
 
 * install a clean copy of dokuWiki https://www.dokuwiki.org/dokuwiki
 * clone this documentation project into a clean directory

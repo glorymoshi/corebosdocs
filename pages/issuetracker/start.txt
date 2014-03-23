@@ -1,0 +1,34 @@
+====== coreBOS Issue Tracker Documentation ======
+
+===== coreBOS Family Projects =====
+  * [[issuetracker:corebos:start|coreBOS]]
+  * [[issuetracker:corebosdocs:start|coreBOS Documentation]]
+  * [[issuetracker:corebosmail:start|coreBOS Mail]]
+  * [[issuetracker:coreboscp:start|coreBOS Customer Portal]]
+  * [[issuetracker:corebosbi:start|coreBOS Business Intelligence]]
+  * [[issuetracker:corebosapps:start|coreBOS Apps]]
+
+===== Issue Tracker Integration with Wiki =====
+
+[[http://www.mantisbt.org/wiki/doku.php/mantisbt:issue:7075:integration_with_dokuwiki|Integration With dokuwiki]]
+
+This part of the documentation is an integration between [[http://mantisbt.org|mantisBT]] (our issue tracking software) and [[http://dokuwiki.org|dokuwiki]] (our documentation software).
+
+This integration flows in both directions.
+
+From the issue tracker we can find three two wiki links:
+  * the top menu wiki link will direct us to this page if "All Projects" are selected or directly to the selected project's page if one is selected.
+  * the wiki link on the top of each issue will take us directly to a specific wiki page where that issue can be disscused.
+
+From the wiki we can reference any issue with this syntax:
+
+<code>~~issue:nnn~~</code>
+
+where nnn is the number of the ticket in [[http://mantisbt.org|mantisBT]]
+
+===== Issue Tracker Integration with GITHUB =====
+
+[[https://github.com/mantisbt-plugins/source-integration]]
+
+[[http://noswap.com/projects/source-integration]]
+
