@@ -1,2 +1,9 @@
+{{description>coreBOS - The one stop software solution for your business.}}
+{{keywords>marketing, email, invoice, support, tickets, sales}}
 ====== coreBOS Documentation Project ======
 
+<menu col=1,align=left>
+  <item>User Manual|How to use the application|usermanual|{{menu:little_knight_32.png?direct|}}</item>
+  <item>Administration Manual|How to administrate the application|adminmanual|{{menu:hammer_32.png?direct|}}</item>
+  <item>Development|Development and Contributions Guidelines|devel|{{menu:developer_32.png?direct|}}</item>
+</menu>

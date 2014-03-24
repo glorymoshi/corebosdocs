@@ -1,1 +1,9 @@
-====== coreBOS Documentación ======
+{{description>coreBOS - The one stop software solution for your business.}}
+{{keywords>marketing, email, invoice, support, tickets, sales}}
+====== coreBOS  Documentación ======
+
+<menu col=1,align=left>
+  <item>Manual de Usuario|Cómo utilizar la aplicación|usermanual|{{menu:little_knight_32.png?direct|}}</item>
+  <item>Manual del Administrador|Cómo administrar la aplicación|adminmanual|{{menu:hammer_32.png?direct|}}</item>
+  <item>Desarrollo|Desarrollo y Guía de Contribuciones|devel|{{menu:developer_32.png?direct|}}</item>
+</menu>

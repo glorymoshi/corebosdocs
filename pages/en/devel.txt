@@ -1,0 +1,2 @@
+  * [[en:devel:licensewoes|License Woes]]
+  * [[en:devel:cla|Contributor License Agreements]]
