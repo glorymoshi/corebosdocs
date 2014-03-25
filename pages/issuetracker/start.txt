@@ -1,5 +1,7 @@
 ====== coreBOS Issue Tracker Documentation ======
 
+<wrap hi>[[http://corebos.tsolucio.com/development|Access coreBOS Issue Tracker]]</wrap>
+
 ===== coreBOS Family Projects =====
   * [[issuetracker:corebos:start|coreBOS]]
   * [[issuetracker:corebosdocs:start|coreBOS Documentation]]
