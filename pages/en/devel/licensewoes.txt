@@ -1,7 +1,13 @@
 ====== License Woes ======
 
   * [[https://www.vtiger.com/vtiger-public-license-1-1/|Vtiger Public License Version 1.1]]  [[en:devel:vpl11|VPL 1.1 (local copy for future reference)]]
-  * vtiger CRM 6.0 is distributed under VPL 1.2. The only diference is that vtiger protects it's trademark and logo.
+  * [[http://www.mozilla.org/MPL/1.1/annotated/|MPL 1.1 Annotated]]
+    * We believe wholeheartedly in the benefits of open source development, but not everyone does. Some people or groups may try to take advantage of the work of open source development through claims of patent infringement. This is unfortunate, but it is also reality. We suggest that you be aware of the intellectual property implications of what you are working on to protect yourself and others from falling afoul of someone else's patent.
+  * [[http://www.eionet.europa.eu/software/licenseexplained.html|MPL Explained]]
+    * It is possible for you to compile and package the source code standalone or bundled with proprietory code as part of a larger works and sell it for profit. You may want to do this to provide product warranty. But, you must tell the licensee that the source code to part of the work is available and that vtiger nor any contributor accepts any liability for the malfunction of the code. (MozPL Section 3.6)
+    * Any modifications you make to MozPL covered code is covered by MozPL with you in the role as contributor and you must make the modification available free of charge (MozPL 1.1, Section 2.2)
+    * Coverage is on source file level. Meaning: If you add a source file to the codebase, that file is owned by you, and you decide what license to use. But it must be possible to compile the product without that source file. If you modify a file already in the codebase the file continues to be under MozPL, and you must make the file available as open source. 
+  * **vtiger CRM 6.0** is distributed under **VPL 1.2**. The only diference is that vtiger protects it's trademark and logo.
   * [[http://www.gnu.org/licenses/license-list.en.html#MPL|GPL-Incompatible Free Software Licenses]]
     * it has some complex restrictions that make it incompatible with the GNU GPL. That is, a module covered by the GPL and a module covered by the MPL cannot legally be linked together. We urge you not to use the MPL 1.1 for this reason.
     * However, MPL 1.1 has a provision (section 13) that allows a program (or parts of it) to offer a choice of another license as well. If part of a program allows the GNU GPL as an alternate choice, or any other GPL-compatible license as an alternate choice, that part of the program has a GPL-compatible license.
