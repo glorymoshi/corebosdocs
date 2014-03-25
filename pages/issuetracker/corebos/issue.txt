@@ -1,0 +1,3 @@
+====== open coreBOS Issue Details ======
+
+  * [[:issuetracker:corebos:issue:80]]
