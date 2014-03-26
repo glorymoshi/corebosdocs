@@ -2,3 +2,5 @@
   * [[en:devel:cla|Contributor License Agreements]]
   * [[en:devel:contribute|How to Contribute]]
   * [[en:devel:contributors|Contributors]]
+  * [[:issuetracker:start|coreBOS Issue Tracker]]
+
