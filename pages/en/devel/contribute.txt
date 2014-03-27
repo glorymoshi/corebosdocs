@@ -17,14 +17,15 @@
 
   * Fork the project you would like to contribute to on GitHub.
   * Create a branch to develop your change
-  * Create a ticket on the [[http://corebos.tsolucio.com/development|coreBOS Open Source Ticket Tracking System]], providing any useful information on the issue.
+  * [[en:devel:bugreport|Create a ticket]] on the [[http://corebos.tsolucio.com/development|coreBOS Open Source Ticket Tracking System]], providing any useful information on the issue.
 
 <WRAP center round alert 60%>
 **DO NOT** put any sensitive information like passwords or private URLs
 </WRAP>
 
-  * Provide instructions on the ticket which GitHub repository and branch should be pulled from, and set the ticket status to "acknowledged" when you are complete.
-  * We'll test, verify and merge your changes and then close the ticket.
+  * Provide instructions on the ticket which GitHub repository and branch should be pulled from, and set the ticket status to "**acknowledged**" when you are complete.
+  * If neccessary [[https://github.com/tsolucio/corebosdocs|create a new issue page in this wiki]] to document the bug, fix and/or feature, and don't forget to add yourself to the [[en:devel:contributors|Contributors page]].
+  * We'll test, verify and merge your changes and then close the ticket, or get back to you with any comments we may have. Please be patient, our resources are limted.
 
 
 
