@@ -1,6 +1,6 @@
 ====== Vtiger Public License Version 1.1 ======
 
-**REPRODUCED HERE FOR FUTURE REFERENCE**
+**REPRODUCED HERE FOR FUTURE REFERENCE, Copied from here: [[https://www.vtiger.com/vtiger-public-license-1-1/|Vtiger Public License Version 1.1]][[en:devel:licensethoughts|.]]  **
 
 Copyright (c) 2004 - 2013 www.vtiger.com All rights reserved.
 
@@ -51,7 +51,7 @@ The Initial Developer hereby grants You a world-wide, royalty-free, non-exclusiv
 
 (b) under Patents Claims infringed by the making, using or selling of Original Code, to make, have made, use, practice, sell, and offer for sale, and/or otherwise dispose of the Original Code (or portions thereof).
 
-(c) the licenses granted in this Section 2.1(a) and (b) are effective on the date Initial Developer first distributes Original Code under the terms of this License.
+(c ) the licenses granted in this Section 2.1(a) and (b) are effective on the date Initial Developer first distributes Original Code under the terms of this License.
 
 (d) Notwithstanding Section 2.1(b) above, no patent license is granted: 1) for code that You delete from the Original Code; 2) separate from the Original Code; or 3) for infringements caused by: i) the modification of the Original Code or ii) the combination of the Original Code with other software or devices.
 
@@ -62,7 +62,7 @@ Subject to third party intellectual property claims, each Contributor hereby gra
 
 (b) under Patent Claims infringed by the making, using, or selling of Modifications made by that Contributor either alone and/or in combination with its Contributor Version (or portions of such combination), to make, use, sell, offer for sale, have made, and/or otherwise dispose of: 1) Modifications made by that Contributor (or portions thereof); and 2) the combination of Modifications made by that Contributor with its Contributor Version (or portions of such combination).
 
-(c) the licenses granted in Sections 2.2(a) and 2.2(b) are effective on the date Contributor first makes Commercial Use of the Covered Code.
+(c ) the licenses granted in Sections 2.2(a) and 2.2(b) are effective on the date Contributor first makes Commercial Use of the Covered Code.
 
 (d) Notwithstanding Section 2.2(b) above, no patent license is granted: 1) for any code that Contributor has deleted from the Contributor Version; 2) separate from the Contributor Version; 3) for infringements caused by: i) third party modifications of Contributor Version or ii) the combination of Modifications made by that Contributor with other software (except as part of the Contributor Version) or other devices; or 4) under Patent Claims infringed by Covered Code in the absence of Modifications made by that Contributor.
 
@@ -84,7 +84,7 @@ If Contributor has knowledge that a license under a third party's intellectual p
 (b) Contributor APIs.
 If Contributor's Modifications include an application programming interface and Contributor has knowledge of patent licenses which are reasonably necessary to implement that API, Contributor must also include this information in the LEGAL file.
 
-(c) Representations.
+(c ) Representations.
 Contributor represents that, except as disclosed pursuant to Section 3.4(a) above, Contributor believes that Contributor's Modifications are Contributor's original creation(s) and/or Contributor has sufficient rights to grant the rights conveyed by this License.
 
 3.5. Required Notices.

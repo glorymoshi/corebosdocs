@@ -1,1 +1,3 @@
 ====== coreBOS Apps Issue Tracker ======
+
+  * [[:issuetracker:corebosapps:issue:67]]

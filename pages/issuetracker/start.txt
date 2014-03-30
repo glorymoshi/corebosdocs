@@ -18,9 +18,9 @@ This part of the documentation is an integration between [[http://mantisbt.org|m
 
 This integration flows in both directions.
 
-From the issue tracker we can find three two wiki links:
+From the issue tracker we can find two wiki links:
   * the top menu wiki link will direct us to this page if "All Projects" are selected or directly to the selected project's page if one is selected.
-  * the wiki link on the top of each issue will take us directly to a specific wiki page where that issue can be disscused.
+  * the wiki link on the top of each issue will take us directly to a specific wiki page where that issue can be explained.
 
 From the wiki we can reference any issue with this syntax:
 
