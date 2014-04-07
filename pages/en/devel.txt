@@ -1,14 +1,28 @@
+====== Tools and References ======
+
+<wrap hi>[[http://corebos.tsolucio.com/development|Access coreBOS Issue Tracker]]</wrap>
+  * [[:issuetracker:start|coreBOS Issue Tracker]]
+  * [[en:devel:contribute|How to Contribute]]
+  * [[:en:devel:bugreport|Bug Reports]]
+  * [[:en:devel:downloads|DOWNLOADS: The official list of milestones]]
+  * [[:en:devel:vt5tocb1|Upgrade vtiger CRM 5.4 to coreBOS 5.4]]
+
+====== Technical Articles ======
+  * [[:en:devel:develtutorials|Development Tutorials]]
+  * [[:en:devel:develtips|Developer Tips and Tricks]]
+  * [[:en:devel:packaging|Packaging and Release Numbers]]
+  * [[:en:devel:translating|Translating]]
+
+====== Contributors ======
+  * [[en:devel:contributors|Contributors]]
+
+====== Interesting Links ======
   * [[en:devel:writtenrules|Written Rules]]
   * [[en:devel:licensewoes|License Woes]]
   * [[en:devel:cla|Contributor License Agreements]]
-  * [[en:devel:contribute|How to Contribute]]
-  * [[en:devel:contributors|Contributors]]
-  * [[:issuetracker:start|coreBOS Issue Tracker]]
-  * [[:en:devel:bugreport|Bug Reports]]
-  * [[:en:devel:packaging|Packaging and Release Numbers]]
-  * [[:en:devel:translating|Translating]]
-  * [[en:devel:tagdownloads|DOWNLOADS: The official list of milestones]]
+  * [[:en:devel:svn2git|SVN > GIT]]
 
+====== Things to do in the Wiki ======
 
   * [[:en:devel:thingstodo|Things to do in the wiki]]
 

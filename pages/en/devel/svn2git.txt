@@ -1,0 +1,7 @@
+====== SVN > GIT ======
+
+  * [[https://github.com/nirvdrum/svn2git|svn2git]]
+  * [[https://help.github.com/articles/importing-from-subversion|Importing SVN to GitHub]]
+  * [[http://john.albin.net/git/convert-subversion-to-git|Converting a Subversion repository to Git]]
+  * [[http://ao2.it/wiki/How_to_migrate_an_SVN_repository_to_Git|How to migrate an SVN repository to Git]]
+  * [[https://www.atlassian.com/en/git/migration|Migrate to Git]]

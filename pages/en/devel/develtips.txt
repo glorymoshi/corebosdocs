@@ -1,0 +1,28 @@
+====== Developer Tips and Tricks ======
+
+??? How can I activate Single Pane for only one (my) module, independent of the system settings?
+
+!!! You have to force the state in DetailView and CallRelatedList {{:devel:patches:singlepaneforcedonmodule.diff|Single Pane forced on module patch}}
+
+<code>--- a/CallRelatedList.php
++++ b/CallRelatedList.php
+@@ -16,7 +16,7 @@
+ $action = vtlib_purify($_REQUEST['action']);
+ $record = vtlib_purify($_REQUEST['record']);
+ $isduplicate = vtlib_purify($_REQUEST['isDuplicate']);
+-
++$singlepane_view = 'true';
+ if($singlepane_view == 'true' && $action == 'CallRelatedList') {
+ 	header("Location:index.php?action=DetailView&module=$currentModule&record=$record&parenttab=$category");
+ } else {
+--- a/DetailView.php
++++ b/DetailView.php
+@@ -71,6 +71,7 @@
+ }
+ 
+ $smarty->assign('IS_REL_LIST', isPresentRelatedLists($currentModule));
++$singlepane_view = 'true';
+ $smarty->assign('SinglePane_View', $singlepane_view);
+ 
+ if($singlepane_view == 'true') {
+</code>

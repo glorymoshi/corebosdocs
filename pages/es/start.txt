@@ -6,6 +6,7 @@
 ====== coreBOS  Documentación ======
 
 <menu col=1,align=left>
+  <item>Instalación y Actualización|Cómo instalar y actualizar la aplicación|installupdate|{{menu:software-icon_32.png?direct|}}</item>
   <item>Manual de Usuario|Cómo utilizar la aplicación|usermanual|{{menu:little_knight_32.png?direct|}}</item>
   <item>Manual del Administrador|Cómo administrar la aplicación|adminmanual|{{menu:hammer_32.png?direct|}}</item>
   <item>Desarrollo|Desarrollo y Guía de Contribuciones|:en:devel|{{menu:developer_32.png?direct|}}</item>
