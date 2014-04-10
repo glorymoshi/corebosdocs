@@ -5,3 +5,13 @@
   * [[http://john.albin.net/git/convert-subversion-to-git|Converting a Subversion repository to Git]]
   * [[http://ao2.it/wiki/How_to_migrate_an_SVN_repository_to_Git|How to migrate an SVN repository to Git]]
   * [[https://www.atlassian.com/en/git/migration|Migrate to Git]]
+
+=====Pull Request=====
+
+<code>git checkout -b temp_branch upstream/master (or upstream/branch)
+
+git cherry-pick <SHA hash of commit>
+
+git push origin temp_branch</code>
+
+[[http://stackoverflow.com/questions/5256021/send-a-pull-request-on-github-for-only-latest-commit|Send a pull request on GitHub for only latest commit]]
