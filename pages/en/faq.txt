@@ -1,0 +1,10 @@
+====== Frequently Asked Questions ======
+
+??? {Siam Translations LLP wrote}: Hi, wondering if anybody see it useful to record IP while webform is completed. I like this idea but not sure how to get it working.
+
+!!! I'm not too sure this is very useful. I think it is much better to track your visitor with [[http://www.google.com/analytics/index.html|Google Analytics]] or [[http://piwik.org/|PiWik]] (which is what we usually do), but it should be rather easy to accomplish:
+
+  * create a custom field in CRM
+  * in the form create a hidden field for that custom field and fill it in with the _SERVER["REMOTE_ADDR"] value
+
+that's it.
