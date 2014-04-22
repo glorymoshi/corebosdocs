@@ -1,0 +1,11 @@
+====== coreBOS Customer Portal Development ======
+
+**[[http://erpevolutivo.com/vtyiiCPng|Online demo]]**\\
+**[[http://erpevolutivo.com/vtyiicpngvt|Associated vtiger CRM Online demo]]**\\
+
+  * [[:en:coreboscp:installconfig|Installation and Configuration]]
+  * [[:en:coreboscp:ruleguidelines|Development guidelines]]
+  * [[:en:coreboscp:vtcpng_utilities|Development Utilities]]
+  * [[:en:coreboscp:changelayout|How to change form and view layout]]
+  * [[:en:coreboscp:changedefaultmodule|How to change the default functionality of a module]]
+  * [[:en:coreboscp:knownissues|Known Issues]]

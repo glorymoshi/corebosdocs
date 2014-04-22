@@ -1,11 +1,4 @@
-<todo>document this</todo>
-
 ====== Development Tutorials ======
 
-??? Me están comentando que el campo "Fecha entrada" por defecto carga la fecha actual. Hay alguna forma de desactivar esto? Es decir, que muestre el campo en blanco y que seleccionen la fecha de forma manual?
-
-!!! En la tabla vtiger_field cambia el valor de la columna generatedtype a 2 para ese campo.
-
-===== How to create custom formula function for field expressions =====
-
-[[https://discussions.vtiger.com/index.php?p=/discussion/168584/created-custom-formula-function-for-field-expressions-sub-string]]
+  * [[en:devel:createvtlibmodule|Create coreBOS module]]
+  * [[en:devel:packagemodules|How to prepare modules for distribution]]

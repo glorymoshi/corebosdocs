@@ -13,6 +13,9 @@
   * [[:en:devel:packaging|Packaging and Release Numbers]]
   * [[:en:devel:translating|Translating]]
 
+
+  * [[:en:devel:coreboscp|coreBOS Customer Portal Development]]
+
 ====== Contributors ======
   * [[en:devel:contributors|Contributors]]
 

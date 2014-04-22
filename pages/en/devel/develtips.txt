@@ -1,4 +1,5 @@
 ====== Developer Tips and Tricks ======
+~~QNA~~
 
 ??? How can I activate Single Pane for only one (my) module, independent of the system settings?
 
@@ -26,3 +27,60 @@
  
  if($singlepane_view == 'true') {
 </code>
+
+??? Custom date fields load by default "today". We need a custom date field to be empty by default, how can we accomplish this.
+
+!!! Look for this field meta data in the database table vtiger_field and change the value of the column generatedtype to 2.
+
+??? How to create custom formula function for field expressions in workflows
+
+!!! [[https://discussions.vtiger.com/index.php?p=/discussion/168584/created-custom-formula-function-for-field-expressions-sub-string]]
+
+The next code adds a substring function and should suffice to show how to add more funtions. Please share if you create any.
+
+<code>Index: modules/com_vtiger_workflow/expression_engine/VTExpressionsManager.inc
+===================================================================
+--- modules/com_vtiger_workflow/expression_engine/VTExpressionsManager.inc	(revisión: 938)
++++ modules/com_vtiger_workflow/expression_engine/VTExpressionsManager.inc	(revisión: 939)
+@@ -41,7 +41,7 @@
+ 	function expressionFunctions() {
+ 		return array('concat' => 'concat(a,b)', 'time_diffdays' => 'time_diffdays(a,b)', 'time_diff' => 'time_diff(a,b)',
+ 			'add_days' => 'add_days(datefield, noofdays)', 'sub_days' => 'sub_days(datefield, noofdays)',
+-			'get_date' => "get_date('today')");
++			'get_date' => "get_date('today')", 'substring' => "substring(stringfield,start,end)");
+ 	}
+ }
+ 
+Index: modules/com_vtiger_workflow/expression_engine/VTExpressionEvaluater.inc
+===================================================================
+--- modules/com_vtiger_workflow/expression_engine/VTExpressionEvaluater.inc	(revisión: 938)
++++ modules/com_vtiger_workflow/expression_engine/VTExpressionEvaluater.inc	(revisión: 939)
+@@ -144,6 +144,15 @@
+ 	}
+ }
+ 
++function __vt_substring($arr) {
++	if (count($arr)<2 or count($arr)>3) return $arr[0];
++	if (count($arr)==2) {
++		return substr($arr[0],$arr[1]);
++	} else {
++		return substr($arr[0],$arr[1],$arr[2]);
++	}
++}
++
+ /** END * */
+ class VTFieldExpressionEvaluater{
+ 	function __construct($expr){
+@@ -165,7 +174,8 @@
+  	            'time_diffdays' => '__vt_time_diffdays',
+ 				'add_days' => '__vt_add_days',
+ 				'sub_days' => '__vt_sub_days',
+-				'get_date' => '__vt_get_date'
++				'get_date' => '__vt_get_date',
++				'substring' => '__vt_substring'
+ 		);
+ 
+ 		$this->operations = array_merge($this->functions, $this->operators);
+</code>
+
+{{youtube>k4RgrfxY880}}

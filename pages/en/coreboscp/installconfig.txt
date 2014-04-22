@@ -1,0 +1,43 @@
+====== coreBOSCP - Installation and Configuration ======
+
+The coreBOSCP application is a rest/webservice interface program to an existing coreBOS application. This means that it has no need for a database of it's own, all the information it manipulates is read from or sent to an associated coreBOS which saves it to the configured database there.
+
+This makes installing and configuring the application rather easy and mostly a case of configuring a coreBOS user and pointing the coreBOSCP application to it's associated coreBOS.
+
+===== coreBOS Webservice Enhancements =====
+
+<todo> this is incorrect as we are going to release the webservice enhancements, once we do change this part and add the github commit</todo>
+
+
+To get coreBOSCP to do all the things needed we have had to extend the default coreBOS webservice considerably. We have tried to minimize the set of changes to a minimum but still a patch must be applied.
+
+  * download the set of changes coreBOSCPWS.zip and uncompress the file from the root of your coreBOS install
+  * apply the patch file coreBOSCPWS.diff which is now in the root of you install
+  * execute the script coreBOSCPWS.sql in your database to get the required database changes
+
+===== coreBOS Customer Portal User =====
+
+To access your coreBOS through the webservice interface an active user in the application must be given. So the first step of the installation process is to access your coreBOS install and create a new user. This user should be assigned it's own role and profile, and the profile should be configured with the correct permissions with which we would like to have available on the customer portal.
+
+coreBOSCP portal application will use this user to access coreBOS and will respect the role and profile permissions assigned to that user. So if some field on Contacts shouldn't be seen on the portal it should be hidden in this user's profile. The same approach is taken for modules. Although coreBOSCP has a set of hard coded modules which it supports, which cannot be extended without programming, we can restrict this set by not giving access to a module to the customer portal user created in the coreBOS application.
+
+Certain "relation" fields are mandatory. All access to entities through the customer portal are restricted by the contact and his account. So all entities will be filtered by their relation field to contacts and accounts. For example, we will only see invoice that belong to the contact or his account, likewise we will only see trouble tickets related to the contact and his account. To be able to achieve this, the portal user MUST have access to the fields that establish this relation.
+
+NOTE: coreBOSCP does not use nor respect the customer portal extension of coreBOS. That extension is used by the vtiger CRM Customer Portal, we do not use any of that configuration.
+
+On the new user's detail or preferences view we will find a field call access key, the value of this field is needed to configure coreBOSCP
+
+
+===== coreBOSCP Install and Configuration =====
+
+  - copy the code to a directory accessible from the web user on the server where you want to have the customer portal
+  - give read/write permission to the web user to all directories in the structure. Specially important are: assets and protected/runtime
+  - edit protected/config/PortalConfig.php and set the variables
+    - $coreBOSCP_Server_Path: must be the full URL to the associated coreBOS install. Obviously this implies that the server you are doing the install on MUST have continuous access to the coreBOS application
+    - $coreBOSCP_Login_User and $coreBOSCP_Access_Key define the user with which we will access coreBOS as defined in the previous section.
+    - $coreBOSCP_AttachmentFolderName is the name of the folder within which you want any trouble ticket attachments to be uploaded
+
+
+===== Contacts Access =====
+
+We must now explicitly give access to each contact we want by means of the fields designated for this on the contact's record in coreBOS.
