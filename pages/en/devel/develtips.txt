@@ -84,3 +84,26 @@ Index: modules/com_vtiger_workflow/expression_engine/VTExpressionEvaluater.inc
 </code>
 
 {{youtube>k4RgrfxY880}}
+
+??? How can I get the Edit button to open in a new window
+([[http://crmevolutivo.com/forum/viewtopic.php?f=6&t=3862|pregunta en el foro]])
+
+!!! You have to apply this next code change.
+
+<code>diff --git a/include/js/general.js b/include/js/general.js
+index d79cc33..c5eae5d 100755
+--- a/include/js/general.js
++++ b/include/js/general.js
+@@ -4066,6 +4066,7 @@ function submitFormForActionWithConfirmation(formName, action, confirmationMsg)
+ function submitFormForAction(formName, action) {
+ 	var form = document.forms[formName];
+ 	if (!form) return false;
++	form.target="_blank";
+ 	form.action.value = action;
+ 	form.submit();
+ 	return true;
+</code>
+
+<WRAP center round important 70%>
+Note that you may have to make a similar change in some other parts of the code, I **ONLY** did a quick test to answer the forum question.
+</WRAP>

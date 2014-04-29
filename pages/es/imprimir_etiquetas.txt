@@ -1,0 +1,11 @@
+====== Imprimir Etiquetas ======
+
+[[http://openoffice.blogs.com/openoffice/2007/01/mail_merge_in_o.html|Creating Mail Merge Documents From Text/CSV or Spreadsheets]]
+
+Son cuatro pasos:
+  - Obtener los datos en formato CSV u Hoja de Cálculo
+  - Convertir los datos en una base de datos de OpenOffice
+  - Crear un documento de etiquetas, carta o sobre y rellenarla con los campos que queremos
+  - Imprimir, posiblemente seleccionando los registros que queremos incluir
+
+

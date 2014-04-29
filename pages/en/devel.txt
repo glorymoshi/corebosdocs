@@ -15,6 +15,7 @@
 
 
   * [[:en:devel:coreboscp|coreBOS Customer Portal Development]]
+  * [[:en:devel:corebosws|Webservice Development]]
 
 ====== Contributors ======
   * [[en:devel:contributors|Contributors]]
