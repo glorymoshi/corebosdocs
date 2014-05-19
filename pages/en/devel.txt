@@ -8,6 +8,7 @@
   * [[:en:devel:vt5tocb1|Upgrade vtiger CRM 5.4 to coreBOS 5.4]]
 
 ====== Technical Articles ======
+  * [[:en:devel:debuging|Debugging]]
   * [[:en:devel:develtutorials|Development Tutorials]]
   * [[:en:devel:develtips|Developer Tips and Tricks]]
   * [[:en:devel:packaging|Packaging and Release Numbers]]

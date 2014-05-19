@@ -1,0 +1,11 @@
+====== Webservice Method Reference ======
+
+=====Retrieve Attachment=====
+^Purpose:|Retrieve file attached to a document as a base64 encoded string. This method was added instead of modifying the already existing Retrieve method to avoid having to download all attachments when only a list is required and so we wouldn't have to modify the existing interface of the retrieve method.|
+^Profile:|retrievedocattachment(id:Id,returnfile:boolean):Map|
+^Send as:|POST|
+^Parameters:|<code> id: comma separated list of document identifiers to obtain
+ returnfile: true if we need to really get the file, false to just get the information of the attachment</code>|
+^Response:|A map object with all the information of the attachment|
+^URL Format:|<code>http://corebos_url/webservice.php?operation=retrievedocattachment&sessionName=[session id]&id=[id documento]&returnfile=[0|1]</code>|
+^Examples:|[[en:devel:corebosws:docenhance_examples|REST Document Manipulation Enhancements]]|

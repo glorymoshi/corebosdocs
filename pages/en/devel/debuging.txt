@@ -1,0 +1,31 @@
+====== Debugging ======
+
+=====PHP=====
+
+  * Turn on log4php.debug library usage, in file config.performance.php <code>'LOG4PHP_DEBUG' => true,</code>
+  * Set the log level, in file log4php.properties <code>log4php.rootLogger = DEBUG, A1</code>
+<WRAP center round important 70%>
+Make sure logs/ folder has write access to apache server process owner.
+</WRAP>
+
+=====Database=====
+
+  * Turn on debugging for ADODB instanced in include/database/PearDatabase (at end of file) <code>if(empty($adb)) {
+ $adb = new PearDatabase();
+ $adb->connect();
+ // ADD THIS LINE
+ $adb->setDebug(true);
+}</code>
+
+=====Smarty=====
+
+  * In file, Smarty_setup.php add the following to class constructor function <code>function vtigerCRM_Smarty() {
+ $this->Smarty();
+ $this->template_dir = 'Smarty/templates';
+ // ...
+ // ADD THIS LINE
+ $this->debugging = true;
+}</code>
+
+=====AJAX and Javascript=====
+  * Chrome and Firefox have webdevelopers tools and firebug.

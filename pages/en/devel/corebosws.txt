@@ -6,6 +6,7 @@
 
 
 ===== Web service documentation =====
+  * [[:en:devel:corebosws:methodreference|Method Reference]]
   * [[:en:devel:corebosws:querylanguage|Query language]]
   * [[:en:devel:corebosws:getpdfdata|Get inventory modules PDF output]]
   * [[:en:devel:corebosws:getrelatedrecords|get Related Records method]]
