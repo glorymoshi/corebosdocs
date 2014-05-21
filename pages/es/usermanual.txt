@@ -3,3 +3,4 @@
   * [[Convertir PreContacto]]
   * [[imprimir_etiquetas|Uso de OpenOffice con Datos de la Aplicación: Impresión de Etiquetas]]
   * [[corebosapps|coreBOSApps]]
+  * [[cambio_moneda_qsoi|Obtención del precio de producto al cambiar de moneda en los módulos de inventario]]
