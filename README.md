@@ -3,7 +3,7 @@ coreBOSDocs
 
 [dokuwiki documentation project for coreBOS](http://corebos.tsolucio.com/documentation)
 
-* install a clean copy of dokuWiki https://www.dokuwiki.org/dokuwiki
+* install a clean copy of [dokuWiki](https://www.dokuwiki.org/dokuwiki)
 * fork this documentation project
 * clone your fork documentation project into a clean directory
 * copy **all the files** into the data directory of the dokuWiki project
