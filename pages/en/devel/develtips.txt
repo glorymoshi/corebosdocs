@@ -144,3 +144,26 @@ index 3088962..88f3c70 100644
  	'LBL_MINI_CALENDAR_DISPLAY' => 'Mini Calendar Display',
  	'LBL_WORLD_CLOCK_DISPLAY'=>'World Clock Display',
 </code>
+
+??? How to eliminate currency sign in report exports
+
+!!! This patch accomplishes this functionality
+
+<code>
+</code>
+
+??? Modify record default view order
+
+!!! Each module has defined it's default column for sorting. This must be changed in the code in the module's main script. For example, for Accounts we can find:
+
+<code php>
+  //Added these variables which are used as default order by and sortorder in ListView
+  var $default_order_by = 'accountname';
+  var $default_sort_order = 'ASC';
+</code>
+
+where we can change the variable $default_order_by to any valid column of the account
+
+<WRAP center round important 70%>
+For this to work we must set the variable 'LISTVIEW_DEFAULT_SORTING' to true in the file config.performance.php
+</WRAP>
