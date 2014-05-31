@@ -4,6 +4,7 @@
 
   * Turn on log4php.debug library usage, in file config.performance.php <code>'LOG4PHP_DEBUG' => true,</code>
   * Set the log level, in file log4php.properties <code>log4php.rootLogger = DEBUG, A1</code>
+  * The log files will be written in the **logs** directory. For the rootLogger it will be logs/vtigercrm.log
 <WRAP center round important 70%>
 Make sure logs/ folder has write access to apache server process owner.
 </WRAP>
@@ -29,3 +30,14 @@ Make sure logs/ folder has write access to apache server process owner.
 
 =====AJAX and Javascript=====
   * Chrome and Firefox have webdevelopers tools and firebug.
+
+=====Frequent problems=====
+
+??? Sorry! Attempt to access restricted file
+
+!!! Make sure the webserver user has write permission in the //user_privileges// directory and that the new user's permission file is correct (it will be user_privileges_##.php and sharing_privileges_##.php).
+
+If that is correct (most probably will be or you wouldn't get to this error) you will have to add some debug message to see exactly what file the application is looking for and can't find. That will be something like this:
+
+[[https://github.com/tsolucio/corebos/commit/26cf68eb89b888aa71d99f3d0e1e5d48b6cf7081]]
+

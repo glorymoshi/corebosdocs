@@ -167,3 +167,12 @@ where we can change the variable $default_order_by to any valid column of the ac
 <WRAP center round important 70%>
 For this to work we must set the variable 'LISTVIEW_DEFAULT_SORTING' to true in the file config.performance.php
 </WRAP>
+
+??? How can I deactivate the delete button on my custom fields in layout editor
+
+!!! Go to the database and change the value of vtiger_field.presence to
+
+  * 0: always active, cannot be modified in layout editor
+  * 1: inactive
+  * 2: active and editable
+
