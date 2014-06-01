@@ -1,0 +1,2 @@
+====== Administrator Manual ======
+  * [[adminmanual:admintips|Tips and Tricks]]

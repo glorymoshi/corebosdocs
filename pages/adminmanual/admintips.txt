@@ -1,0 +1,10 @@
+====== Administrator Tips and Tricks ======
+~~QNA~~
+
+??? How to extend the session. I keep getting logged out of the program
+
+!!! This issue is not directly related to the application itself. The problem is that sensitive information like the password is saved in the PHP session variables. While that session is alive, the application can pick up the values and authenticate. PHP has a process whereas it eliminates the session variables on a variable time span. When PHP clears the variables, the application cannot authenticate and asks again for the information. 
+
+The PHP variables that control this are the **Garbage Collector** variables. In php.ini is **gc_probablity** default set to 0, because Ubuntu use its cron job for cleaning php session files ([[http://www.appnovation.com/blog/session-garbage-collection-php|more info]]).
+
+You can also increase **session.gc_maxlifetime** in php.ini.
