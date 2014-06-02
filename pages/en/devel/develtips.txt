@@ -176,3 +176,10 @@ For this to work we must set the variable 'LISTVIEW_DEFAULT_SORTING' to true in 
   * 1: inactive
   * 2: active and editable
 
+??? How to recalculate privileges and regenerate user_privilege files from the command line.
+
+!!! This is a very useful trick when we lose the user_privileges directory or the admin user files and can't login.
+
+<code php>cd <application root directory>
+php -r "require_once 'include/utils/UserInfoUtil.php'; RecalculateSharingRules();"
+</code>
