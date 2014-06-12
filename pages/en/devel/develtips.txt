@@ -147,9 +147,28 @@ index 3088962..88f3c70 100644
 
 ??? How to eliminate currency sign in report exports
 
-!!! This patch accomplishes this functionality
+!!! This patch accomplishes this functionality. You don't have to collect the currency symbol, just save the value and format like with the php function "number_format" to get the value with the correct decimals.
 
 <code>
+Index: modules/Reports/ReportUtils.php
+===================================================================
+--- modules/Reports/ReportUtils.php     (revisión: 5892)
++++ modules/Reports/ReportUtils.php     (revisión: 5964)
+@@ -75,11 +75,10 @@
+                        $cur_sym_rate = getCurrencySymbolandCRate($currency_id);
+                        if($value!='') {
+                                $formattedCurrencyValue = CurrencyField::convertToUserFormat($currency_value, null, true);
+-                               $fieldvalue = CurrencyField::appendCurrencySymbol($formattedCurrencyValue, $cur_sym_rate['symbol']);
++                               $fieldvalue = number_format($formattedCurrencyValue,2,'.','');
+                        }
+                } else {
+-                       $currencyField = new CurrencyField($value);
+-                       $fieldvalue = $currencyField->getDisplayValue();
++                       $fieldvalue = number_format($value,2,'.','');
+                }
+
+        } elseif ($dbField->name == "PurchaseOrder_Currency" || $dbField->name == "SalesOrder_Currency"
+
 </code>
 
 ??? Modify record default view order
