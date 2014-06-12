@@ -4,8 +4,10 @@ How to install and update the application
 
 ====== Install ======
 
+  * [[install550|Install coreBOS 5.5.0]]
   * [[install540|Install coreBOS 5.4.0]]
 
 ====== Update ======
 
+  * [[upgradecb5402cb550|Upgrade from coreBOS 5.4.0 to coreBOS 5.5.0]]
   * [[upgradevt2cb540|Upgrade from vtiger CRM 5.4.0 to coreBOS 5.4.0]]
