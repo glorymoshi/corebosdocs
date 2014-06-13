@@ -39,6 +39,16 @@ Make sure to verify if your PHP configuration meets the recommended values.
 |output_buffering|on|
 |register_globals|off|
 
+<WRAP center round info 75%>
+If you have the PHP Suhosin extension installed, this extension adds restrictions to make PHP more secure, but some of these restrictions break coreBOS.
+
+To solve this problem you must change two variables in the suhosin config file: (normally: /etc/php5/conf/suhosin.ini)
+
+<code>suhosin.post.max_vars = 2000
+suhosin.request.max_vars = 2000</code>
+
+After this you must restart your apache server.
+</WRAP>
 
 ==== File Permissions  ====
 
