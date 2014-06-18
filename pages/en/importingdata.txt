@@ -9,7 +9,7 @@
 
 ==== Search Reference Fields on (almost) any field of the referenced module ====
 <WRAP center round important 70%>
-**Starting at coreBOS 5.4.1**
+**Starting at coreBOS 5.5**
 </WRAP>
 
 When importing information into the application we can automatically related the record we are importing with another module when that relation is direct. For example, if we import a Contact record we can import the Account column with the identifier field of accounts and the new contact will get related correctly.
@@ -42,7 +42,7 @@ Sometimes we don't have that special field in our import data or, if we do, we c
 
 The ideal/typical scenario is where you have done the **first import right (!)** and added a custom field to the module that indicates the ID of that record in your other system. This is fundamental where you have two system coexisting in the company and you have to do regular imports of information.
 
-**As of coreBOS 5.4.1** we have extended the extended syntax 8-) so you can indicate the field you want to search upon to find the referenced module. You can now add the field name upon which you want to search AFTER the extended syntax with the same separator "::::". So the next CSV would import potentials searching the first record on the Accounts' siccode field and the second on the Contacts' cf_640  field.
+**As of coreBOS 5.5** we have extended the extended syntax 8-) so you can indicate the field you want to search upon to find the referenced module. You can now add the field name upon which you want to search AFTER the extended syntax with the same separator "::::". So the next CSV would import potentials searching the first record on the Accounts' siccode field and the second on the Contacts' cf_640  field.
 
 <code>"Opportunity Name","Related To","Amount","Type","Expected Close Date"
 "Extended Test Account","Accounts::::987654::::siccode","987654","Existing Business","2016-01-07"

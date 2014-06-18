@@ -34,6 +34,8 @@ Make sure to verify if your PHP configuration meets the recommended values.
 |display_errors|on|
 |file_uploads|on|
 |max_execution_time|600|
+|max_input_vars|2000|
+|post_max_size|16M|
 |memory_limit|512M|
 |log_errors|off|
 |output_buffering|on|

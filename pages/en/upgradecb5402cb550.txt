@@ -12,6 +12,8 @@ Upgrading is work better suited for a developer who is comfortable playing with 
 **Backup your files and database**, there should be no problem, all the code is tested and the process is not invasive, if there is a problem **we will help**, this is just a precautionary step and another good reason to make a backup of your information
 </WRAP>
 
+FIXME   Document this:
+**IMPORTANT**: [[http://corebos.tsolucio.com/development/view.php?id=120]]
 ===== You have a clean coreBOS 5.4 =====
 
 You can proceed in two ways, either use the fully patched zip upgrade package or apply the patch.
