@@ -3,11 +3,11 @@
 ===== Comments on important changes =====
 
 This release is all about two things:
-  - **PHP 5.4 and 5.5 support and code cleanup.**  coreBOS now runs correctly on PHP 5.4 and PHP 5.5. Besides fixing the code we have started upgrading the libraries and documenting the dependencies and relentlessly are hunting down all the notice and warning messages (we have eliminated hundreds already).
+  - **PHP 5.4 and 5.5 support and code cleanup.**  coreBOS now runs correctly on PHP 5.4 and PHP 5.5. Besides fixing the code we have started upgrading the libraries and documenting the dependencies and are relentlessly hunting down all the notice and warning messages (we have eliminated hundreds already).
   - **REST enhancements: [[http://corebos.org/documentation/doku.php?id=en:devel:coreboscp|Customer Portal]].** from coreBOS 5.5 forward we have a whole new set of webservice functionality to support advanced application development like our [[http://corebos.org/documentation/doku.php?id=en:devel:coreboscp|coreBOSCP Customer Portal Project]] and many others.
 
 
-There are a few more important things that are worth detailing next and full details of the changes below, on the tickets and some have their own wiki page with an explanation, this is just a quick relation of the work done in this release.
+There are a few more important things that are worth detailing next and all the changes can be found below with full details on the tickets, some even have their own wiki page with an additional explanation, this is just a quick relation of the work done in this release.
 
 ====Code Cleanup====
 
@@ -26,7 +26,7 @@ custom fields on documents, related list of entities visible on documents
   * Sequence numbering for autoincrement fields not respected on import
   * Import with merge and default value. Thanks boris_fr
   * When importing with merge fields selected, these fields do not always appear in selectable mapping
-  * Enhance import to search related fields on any field|
+  * Enhance import to search related fields on any field
 
 ====REST Enhancements====
   * security enhancements on REST global search: related to issue ~~issue:157~~
@@ -48,6 +48,7 @@ custom fields on documents, related list of entities visible on documents
   * fixes ~~issue:120~~: speed optimizations for REST
 
 ====Repackaging and Structure====
+FIXME
   * update packages to be in sync with file changes. fix error in pack.sh for bundle packages
   * fix language export by adding dependencies information and update Spanish package which had it missing
   * Restructure package directory Create build directory for developement Enhance Package Export to re-package in different ways Add support for exporting Language packs export scripts in build
