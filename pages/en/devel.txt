@@ -5,6 +5,7 @@
   * [[en:devel:contribute|How to Contribute]]
   * [[:en:devel:bugreport|Bug Reports]]
   * [[:en:devel:downloads|DOWNLOADS: The official list of milestones]]
+  * [[:en:upgradecb5402cb550|Upgrade coreBOS 5.4 to coreBOS 5.5]]
   * [[:en:devel:vt5tocb1|Upgrade vtiger CRM 5.4 to coreBOS 5.4]]
 
 ====== Technical Articles ======

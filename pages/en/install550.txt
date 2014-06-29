@@ -4,7 +4,7 @@
   * MySQL 5.1.x
   * PHP from 5.3.x to 5.5.x
 <WRAP center round info 75%>
-This is a typical **WAMP/LAMP stack**. All linux distributions have this natively so we recommend you install the packages from your distribution (make sure you have the right versions). On windows download the XAMPP stack from apache friends. You can see the [[http://code.stephenmorley.org/articles/xampp-version-history-apache-mysql-php|list of application versions here]].]].
+This is a typical **WAMP/LAMP stack**. All linux distributions have this natively so we recommend you install the packages from your distribution (make sure you have the right versions). On windows download the XAMPP stack from apache friends. You can see the [[http://code.stephenmorley.org/articles/xampp-version-history-apache-mysql-php|list of application versions here]].
 </WRAP>
 
 ==== MYSQL Requirements ====
@@ -20,6 +20,7 @@ Following extensions should be enabled for your PHP setup
 |GD|Mandatory|Charts and graphs generation are dependent on this library.|
 |IMAP|Mandatory|Webmails Module is dependent on this library.|
 |Zlib|Mandatory|
+|**DOM (php-xml)**|Mandatory|**New dependency** For coreBOS Updater|
 |OpenSSL|Optional|Imap with OpenSSL should be enabled in case Mail server needs to be connected via SSL|
 |Curl|Optional|
 
@@ -113,7 +114,23 @@ If the database exists it **MUST** be empty, the install procedure DOES NOT migr
 {{ :en:corebosinstall02.png?800 |}}
 
   * now wait for all the installation work to be done
+
+<WRAP center round info 70%>
+Latest versions of Firefox have added a configuration option that limits the time a web page can take to execute. If this time is passed the browser will cancel the call. The install process easily passes this 5 minute limit on many machines producing a problem in the installation process and canceling it.
+
+**We will attend this issue in the next release because it causes us to redefine the install process.**
+
+In the mean time you can configure the browser increasing the timeout or use chrome for the installation process.
+
+To increment the time out type in "about:config" in the browser address, look for "network.http.response.timeout" and set it to 600 at least and restart the browser.
+
+{{ :en:firefoxtimeout.png?500 |}}
+</WRAP>
+
+
   * if all goes well you should receive a verification page welcoming you to the application
   * press the **Finish** button to reach the login page
+  * login to the application as the admin user and go to the "**coreBOS Updater**" module.
+  * Click on the "**Get Updates**" button and then on the "**Apply All**" button to get all the latest changes installed.
   * Now comes all the fun: first configure the application and then create users to start
 

@@ -16,7 +16,7 @@ re-branding, adapting, code cleanup and structure, bug fixes, more user-friendly
 ====PHP 5.4 and 5.5 Support. Upgrade libraries====
 
   *Improve compatibility with PHP5.4/5.5, fixes ~~issue:109~~
-  *~~issue:118~~: update phpmailer library to 5.2.7 and centralize mail sending
+  *~~issue:118~~: update phpmailer library to 5.2.7 and centralize mail sending and some additional library updates and study
 
 ====Document module enhancements====
 
@@ -28,7 +28,20 @@ custom fields on documents, related list of entities visible on documents
   * When importing with merge fields selected, these fields do not always appear in selectable mapping
   * Enhance import to search related fields on any field
 
+====Report Enhancements====
+  * support for A4 on PDF export
+  * Enable basic reporting on Emails
+  * Reporting on SalesOrder related entities: ('Accounts','Contacts','Potentials','Quotes') and Invoice related entity Contact
+
+====Other Enhancements====
+  * translation enhancements in Settings
+  * Forecast field and workflow on potential
+  * clean and optimize database
+  * better email validation: ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email for
 ====REST Enhancements====
+
+  * ~~issue:195~~, ~~issue:196~~: REST enhancements for better UPDATE and not lose product lines on inventory modules update
+  * fixes ~~issue:184~~: Webservices Calendar sets/returns only 1 contact id and no custom field information
   * security enhancements on REST global search: related to issue ~~issue:157~~
   * fixes ~~issue:164~~: REST Enhancement: Document manipulation|
   * fixes ~~issue:162~~, ~~issue:163~~: REST Enhancement: method to Recover Password, 163: REST Enhancement: method to validate if a given user has portal access
@@ -55,6 +68,46 @@ FIXME
 
 
 ===== Full list of changes from GIT commits =====
+
+|[[https://github.com/tsolucio/corebos/commit/129cb7d|129cb7d]]|eliminate select modules step in install|
+|[[https://github.com/tsolucio/corebos/commit/d6087af|d6087af]]|branding calendar export and deleting install image that is not needed|
+|[[https://github.com/tsolucio/corebos/commit/fef3f93|fef3f93]]|testing and fixing install for 5.5 release|
+|[[https://github.com/tsolucio/corebos/commit/0909414|0909414]]|fixes ~~issue:195~~, ~~issue:196~~: REST enhancements for better UPDATE and not lose product lines on inventory modules|
+|[[https://github.com/tsolucio/corebos/commit/7cee73d|7cee73d]]|related to issue ~~issue:118~~: update freetag for Tag Cloud functionality|
+|[[https://github.com/tsolucio/corebos/commit/23d73b5|23d73b5]]|fixes ~~issue:119~~: Fix the rules export/import and now the groups export/import is supported|
+|[[https://github.com/tsolucio/corebos/commit/65605c0|65605c0]]|cbupdater: controled update error. make cleandb more robust|
+|[[https://github.com/tsolucio/corebos/commit/6518f66|6518f66]]|fixes ~~issue:140~~: clean and optimize database from updater|
+|[[https://github.com/tsolucio/corebos/commit/cc9c271|cc9c271]]|Reporting on SalesOrder related entities: ('Accounts','Contacts','Potentials','Quotes') and Invoice related entity Contact|
+|[[https://github.com/tsolucio/corebos/commit/916ac74|916ac74]]|delete workflow method in cbupdater: fix PotentialForecast update|
+|[[https://github.com/tsolucio/corebos/commit/6a8568a|6a8568a]]|fix inherted incorrect mass replace of vtiger_files, vtiger_headers and vtiger_users|
+|[[https://github.com/tsolucio/corebos/commit/ccc086a|ccc086a]]|syntax error in message|
+|[[https://github.com/tsolucio/corebos/commit/d419465|d419465]]|Forcast field and workflow on potential|
+|[[https://github.com/tsolucio/corebos/commit/6484509|6484509]]|Enable basic reporting on Emails|
+|[[https://github.com/tsolucio/corebos/commit/04e8702|04e8702]]|elminate notice, related to issue ~~issue:144~~|
+|[[https://github.com/tsolucio/corebos/commit/bf25d37|bf25d37]]|new installer frontend|
+|[[https://github.com/tsolucio/corebos/commit/1c96a91|1c96a91]]|support for A4 on PDF report export|
+|[[https://github.com/tsolucio/corebos/commit/18caea8|18caea8]]|Merge pull request #4 from playmono/patch-2|
+|[[https://github.com/tsolucio/corebos/commit/77405a6|77405a6]]|Update EditViewUtils.php|
+|[[https://github.com/tsolucio/corebos/commit/8a7bae0|8a7bae0]]|translating enhancements on settings|
+|[[https://github.com/tsolucio/corebos/commit/e958485|e958485]]|add notescf, document custom field table, just in case|
+|[[https://github.com/tsolucio/corebos/commit/64b7a39|64b7a39]]|security enhancements in inventory module: picked up from VT6|
+|[[https://github.com/tsolucio/corebos/commit/f0ac1cc|f0ac1cc]]|fixes ~~issue:88~~: Lead Convert Field Mapping header formatting when editing|
+|[[https://github.com/tsolucio/corebos/commit/dc1a105|dc1a105]]|Simpler package installation from manifest.xml|
+|[[https://github.com/tsolucio/corebos/commit/7b011ff|7b011ff]]|fixes ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email for|
+|[[https://github.com/tsolucio/corebos/commit/e55b229|e55b229]]|squashing warning and notices: related to issue ~~issue:144~~|
+|[[https://github.com/tsolucio/corebos/commit/2b41cc7|2b41cc7]]|debuging upgrade to 5.5|
+|[[https://github.com/tsolucio/corebos/commit/e8facf6|e8facf6]]|additional helper methods for cbupdater|
+|[[https://github.com/tsolucio/corebos/commit/230f0ed|230f0ed]]|database changes for 5.5 release|
+|[[https://github.com/tsolucio/corebos/commit/980530e|980530e]]|cbupdater: coreBOS updater module|
+|[[https://github.com/tsolucio/corebos/commit/1e9c12d|1e9c12d]]|squashing warnings. related to issue ~~issue:144~~|
+|[[https://github.com/tsolucio/corebos/commit/0cf3222|0cf3222]]|squash another warning. related to issue ~~issue:144~~|
+|[[https://github.com/tsolucio/corebos/commit/648deff|648deff]]|fixes ~~issue:135~~: When adding a filter rule trough Vtlib, the rule does'nt exist in Vtiger: update vtlib filter to group condition support|
+|[[https://github.com/tsolucio/corebos/commit/1671759|1671759]]|fixes ~~issue:187~~: create method to import module manifest file|
+|[[https://github.com/tsolucio/corebos/commit/197c965|197c965]]|fix syntax error in users curreny field name|
+|[[https://github.com/tsolucio/corebos/commit/50a5459|50a5459]]|branding and code cleanup|
+|[[https://github.com/tsolucio/corebos/commit/33c33af|33c33af]]|code cleanup and eliminating warning messages. related to issue ~~issue:144~~|
+|[[https://github.com/tsolucio/corebos/commit/b3897ce|b3897ce]]|fix error in language export and add English en_us to module manager|
+|[[https://github.com/tsolucio/corebos/commit/d5f1fba|d5f1fba]]|fixes ~~issue:184~~: Webservices Calendar sets/returns only 1 contact id and no custom field information|
 |[[https://github.com/tsolucio/corebos/commit/27ef3bf|27ef3bf]]|fixes ~~issue:106~~: Fix error when concat queries, a space is needed|
 |[[https://github.com/tsolucio/corebos/commit/04a4f21|04a4f21]]|fixes issue ~~issue:181~~: error inserting modtracker link on detail view action list|
 |[[https://github.com/tsolucio/corebos/commit/fdb51b4|fdb51b4]]|related to ~~issue:144~~: getting rid of warnings and messages|
