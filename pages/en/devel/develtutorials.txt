@@ -2,4 +2,6 @@
 
   * [[en:devel:createvtlibmodule|Create coreBOS module]]
   * [[en:devel:packagemodules|How to prepare modules for distribution]]
+  * [[en:devel:corebosupdater|How to prepare and distribute system changes using coreBOS Updater]]
   * [[en:devel:entityidentifier|How to change entity identifier]]
+  * [[en:devel:listpricereadonly|How to Make List Price Read Only On Inventory Modules]]
