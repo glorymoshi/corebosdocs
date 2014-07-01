@@ -2,12 +2,13 @@
 
 ===== Comments on important changes =====
 
-This release is all about two things:
+This release is all about three things:
   - **PHP 5.4 and 5.5 support and code cleanup.**  coreBOS now runs correctly on PHP 5.4 and PHP 5.5. Besides fixing the code we have started upgrading the libraries and documenting the dependencies and are relentlessly hunting down all the notice and warning messages (we have eliminated hundreds already).
   - **REST enhancements: [[http://corebos.org/documentation/doku.php?id=en:devel:coreboscp|Customer Portal]].** from coreBOS 5.5 forward we have a whole new set of webservice functionality to support advanced application development like our [[http://corebos.org/documentation/doku.php?id=en:devel:coreboscp|coreBOSCP Customer Portal Project]] and many others.
+  - **[[en:devel:packagemodules|Code changes]] and [[en:devel:corebosupdater|updates]] enhancements**. A whole new distribution method that will make future upgrades, both in the code and in the database MUCH easier. This prepares us to start launching the new functionality we have right around the corner.
 
 
-There are a few more important things that are worth detailing next and all the changes can be found below with full details on the tickets, some even have their own wiki page with an additional explanation, this is just a quick relation of the work done in this release.
+There are a few more important features that are worth detailing next and all the changes can be found below with full details on the tickets, some even have their own wiki page with an additional explanation, this is just a quick relation of the work done in this release.
 
 ====Code Cleanup====
 
@@ -37,7 +38,7 @@ custom fields on documents, related list of entities visible on documents
   * translation enhancements in Settings
   * Forecast field and workflow on potential
   * clean and optimize database
-  * better email validation: ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email for
+  * better email validation: ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email formats
 ====REST Enhancements====
 
   * ~~issue:195~~, ~~issue:196~~: REST enhancements for better UPDATE and not lose product lines on inventory modules update
@@ -61,14 +62,21 @@ custom fields on documents, related list of entities visible on documents
   * fixes ~~issue:120~~: speed optimizations for REST
 
 ====Repackaging and Structure====
-FIXME
-  * update packages to be in sync with file changes. fix error in pack.sh for bundle packages
-  * fix language export by adding dependencies information and update Spanish package which had it missing
-  * Restructure package directory Create build directory for developement Enhance Package Export to re-package in different ways Add support for exporting Language packs export scripts in build
+
+  * [[en:devel:packagemodules|Restructure package directories]] to make it easier to distribute changes
+  * [[en:devel:corebosupdater|coreBOS Updater]] to make it easy to distribute changes and updates to the system
+  * Create build directory for development
+  * Enhance Package Export to re-package in different ways. Add support for exporting Language packs.
+
 
 
 ===== Full list of changes from GIT commits =====
 
+|[[https://github.com/tsolucio/corebos/commit/3a10b4b|3a10b4b]]|delete some additional files catched while testing upgrade to 5.5|
+|[[https://github.com/tsolucio/corebos/commit/a2479fc|a2479fc]]|fixes for 5.5 upgrade: new methods to update version in file and database. code cleanup and branding|
+|[[https://github.com/tsolucio/corebos/commit/154a859|154a859]]|no postgreSQL support on install|
+|[[https://github.com/tsolucio/corebos/commit/9362188|9362188]]|eliminate empty help reference during install|
+|[[https://github.com/tsolucio/corebos/commit/ad80bbc|ad80bbc]]|migration changes to 5.5|
 |[[https://github.com/tsolucio/corebos/commit/129cb7d|129cb7d]]|eliminate select modules step in install|
 |[[https://github.com/tsolucio/corebos/commit/d6087af|d6087af]]|branding calendar export and deleting install image that is not needed|
 |[[https://github.com/tsolucio/corebos/commit/fef3f93|fef3f93]]|testing and fixing install for 5.5 release|
@@ -93,7 +101,7 @@ FIXME
 |[[https://github.com/tsolucio/corebos/commit/64b7a39|64b7a39]]|security enhancements in inventory module: picked up from VT6|
 |[[https://github.com/tsolucio/corebos/commit/f0ac1cc|f0ac1cc]]|fixes ~~issue:88~~: Lead Convert Field Mapping header formatting when editing|
 |[[https://github.com/tsolucio/corebos/commit/dc1a105|dc1a105]]|Simpler package installation from manifest.xml|
-|[[https://github.com/tsolucio/corebos/commit/7b011ff|7b011ff]]|fixes ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email for|
+|[[https://github.com/tsolucio/corebos/commit/7b011ff|7b011ff]]|fixes ~~issue:175~~: Please enter a valid Email: use angularjs/chrome email validation regular expression to fix issues with firefox and certain email formats|
 |[[https://github.com/tsolucio/corebos/commit/e55b229|e55b229]]|squashing warning and notices: related to issue ~~issue:144~~|
 |[[https://github.com/tsolucio/corebos/commit/2b41cc7|2b41cc7]]|debuging upgrade to 5.5|
 |[[https://github.com/tsolucio/corebos/commit/e8facf6|e8facf6]]|additional helper methods for cbupdater|
@@ -144,8 +152,6 @@ FIXME
 |[[https://github.com/tsolucio/corebos/commit/1ecaa94|1ecaa94]]|fixes ~~issue:162~~, ~~issue:163~~: REST Enhancement: method to Recover Password, 163: REST Enhancement: method to validate if a given user has portal access|
 |[[https://github.com/tsolucio/corebos/commit/44e0dae|44e0dae]]|fixes ~~issue:161~~: REST Enhancement: get filter fields|
 |[[https://github.com/tsolucio/corebos/commit/1bbd234|1bbd234]]|fixes ~~issue:160~~: REST Enhancement: get translation|
-|[[https://github.com/tsolucio/corebos/commit/37833b9|37833b9]]|fixes ~~issue:162~~, ~~issue:163~~: REST Enhancement: method to Recover Password, 163: REST Enhancement: method to validate if a given user has portal access|
-|[[https://github.com/tsolucio/corebos/commit/0a673c5|0a673c5]]|fixes ~~issue:161~~: REST Enhancement: get filter fields|
 |[[https://github.com/tsolucio/corebos/commit/756c47d|756c47d]]|fixes ~~issue:60~~: REST Enhancement: get translation|
 |[[https://github.com/tsolucio/corebos/commit/039ad18|039ad18]]|fixes ~~issue:159~~: REST Enhancement: add Ticket FAQ comment|
 |[[https://github.com/tsolucio/corebos/commit/913e528|913e528]]|fixes ~~issue:150~~, fixes ~~issue:151~~, fixes ~~issue:152~~, fixes ~~issue:153~~, fixes ~~issue:154~~, fixes ~~issue:155~~, fixes ~~issue:156~~, fixes ~~issue:157~~, fixes ~~issue:158~~: REST Enhancements for coreBOSCustomer Portal|

@@ -130,7 +130,9 @@ To increment the time out type in "about:config" in the browser address, look fo
 
   * if all goes well you should receive a verification page welcoming you to the application
   * press the **Finish** button to reach the login page
-  * login to the application as the admin user and go to the "**coreBOS Updater**" module.
-  * Click on the "**Get Updates**" button and then on the "**Apply All**" button to get all the latest changes installed.
-  * Now comes all the fun: first configure the application and then create users to start
+  * **execute the database changes**, this is done using the **[[en:devel:corebosupdater|coreBOS Updater]]**, which is a module that will take care of managing all the updates from now on. It will read the set of changes that need to be done and will permit you to apply them and undo some of them.
+    * login to the application as the admin user and go to the "**coreBOS Updater**" module.
+    * click on the **Get Updates** button
+    * go back to the list view and click on the **Apply All** button
+  * **Now comes all the fun**: first configure the application and then create users to start
 
