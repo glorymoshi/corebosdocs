@@ -1,0 +1,12 @@
+====== Update Workflows ======
+
+TBD
+===== Examples =====
+
+??? **jgrossman** on discussion forum :: Hopefully someone can help me figure this out.
+
+I think it should be easy but I don't seem to be able to figure out how to have a workflow that updates a field with a message that has an expression with words and math together. So it would say //Your answer is 54 units to small//. The workflow would have in the expression the static text of "Your answer is" then math to come up with the 54 using (cf_### + cf_###) then back to static text for "units to small'.
+
+!!! Ok, It turns out it is as simple as I thought. The code below works.
+
+<code>concat('Your answer is ',cf_### + cf_###,' units to small')</code>
