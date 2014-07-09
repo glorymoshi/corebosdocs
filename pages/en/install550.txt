@@ -115,6 +115,8 @@ If the database exists it **MUST** be empty, the install procedure DOES NOT migr
 
   * now wait for all the installation work to be done
 
+== Firefox Timeout Marker ==
+
 <WRAP center round info 70%>
 Latest versions of Firefox have added a configuration option that limits the time a web page can take to execute. If this time is passed the browser will cancel the call. The install process easily passes this 5 minute limit on many machines producing a problem in the installation process and canceling it.
 

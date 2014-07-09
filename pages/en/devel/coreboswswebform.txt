@@ -15,4 +15,70 @@ While we were at it we added the **typical validation of fields**, so you can ma
 
 ===== Configuration and Usage =====
 
-<todo>Document coreBOSwsWebform configuration and usage</todo>
+The general idea is to set up your web form with whatever tool best fits your website software and have the form data sent to a script that will set the configuration options and call the coreBOS Webservice Webform code. This script will validate the information, connect to the defined coreBOS system and create the configured entities.
+
+All the configuration options are contained in an array at the beginning of your script:
+
+<code>* $config = array(
+      // Connection parameters
+      'url' => 'http://localhost/corebos/',  // your coreBOS system URL
+      'user' => 'admin',  // user that will be connecting via REST to create the entities and validate fields
+      'password' => '',  // user's access key
+      // Entity mapping to process form fields
+      'map' => array(
+          // WebServices module name
+          'Contacts' => array(
+              // Field mapping
+             'fields' => array(
+                  // [Entity field name] => [form field name]
+                  'firstname' => 'firstname',
+                  // Use just the field name if both are the same
+                  'lastname',
+                  'email',
+              ),
+              // Fields that should match to find a duplicate
+              'matching' => array(
+                  // we can specify an 'and' or 'or' key to group fields inside parenthesis with the given operator, nesting is possible
+                  'or' => array(
+                      'and' => array(
+                          // [field name in the dabase] => [field name in the new entity]
+                          'firstname' => 'firstname',
+                          // When both are the same we can write just one
+                          'lastname',
+                      ),
+                      'email',
+                  ),
+                  // The resulting condition is ( ( firstname=e.firstname and lastname=e.lastname ) or email=e.email )
+              ),
+              // Optionally, an entity can include other related entities
+              'has' => array(
+                  // We repeat here the structure for an Entity mapping
+                  'Potentials' => array(
+                      'fields' => array(
+                          'related_to' => '[Contacts]',
+                          'potentialname' => 'potential_name',
+                          'closingdate' => 'potential_closingdate',
+                          'sales_stage' => 'potential_sales_stage',
+                      ),
+                      'matching' => array(
+                          // When no operator is specified, 'and' is used, so here all fields should match
+                          'related_to',
+                          'potentialname',
+                      ),
+                  ),
+              ),
+          ),
+          // We could go on with other entity mappings
+      ),
+  );</code>
+
+The abstract idea is that you define two things:
+  * access information to your coreBOS
+  * list of modules to create in the coreBOS system
+
+For each module you want to create you can define:
+  * **'fields'**: list of fields in the coreBOS system that you want to save and which fields on the form are capturing that information
+  * **'matching'**: a set of validation steps you want to verify against the coreBOS system, basically avoid duplicate records based on some fields
+  * **'has'**: a list of modules, for each one we will create a new record related to the main module of this configuration option. The definition of each module has the exact same structure and functionality as the main module of this setting.
+
+The [[https://github.com/tsolucio/coreBOSwsWebform|GitHub repository]] has a [[https://github.com/tsolucio/coreBOSwsWebform/blob/master/test.php|test file]] which you can use as a starting point for your project.
