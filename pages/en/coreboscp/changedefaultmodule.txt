@@ -123,7 +123,7 @@ Note that I simply copied the whole action from vtentity and changed the view. O
 
 This is the how the new FAQ view looks:
 
-{{:coreBOSCP:cpfaqview.png?950|}}
+{{:en:coreBOSCP:cpfaqview.png?950|}}
 
 
 **NOTE**: for specific CSS applied to the new view I import my own CSS file in the main themes/standard/css/style.css file

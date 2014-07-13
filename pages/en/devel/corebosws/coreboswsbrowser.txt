@@ -22,7 +22,7 @@ Simply type your query into the text box and click on the execute button.
 
 This is an information page, so simply accessing is enough to get all available information.
 
-==== Test Code ====
+==== Test Code for PHP and Javascript ====
 
 Write your code into the code editor or load a pre-existing script and edit it. You can click on execute as many times as you need to see the internals of the executions.
 
