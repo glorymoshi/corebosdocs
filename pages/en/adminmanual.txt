@@ -1,3 +1,6 @@
 ====== Administrator Manual ======
   * [[adminmanual:admintips|Tips and Tricks]]
   * [[workflows|Workflows]]
+  * [[cyppasarela|Payments Control Module :: Payment Gateway]]
+  * [[configeditor|Configuration Editor]]
+  * [[configureoutgoingserver|How to Configure Outgoing Server]]
