@@ -1,18 +1,20 @@
 ====== Tools and References ======
 
-<wrap hi>[[http://corebos.tsolucio.com/development|Access coreBOS Issue Tracker]]</wrap>
+<wrap hi>[[http://corebos.org/development|Access coreBOS Issue Tracker]]</wrap>
   * [[:issuetracker:start|coreBOS Issue Tracker]]
   * [[en:devel:contribute|How to Contribute]]
   * [[:en:devel:bugreport|Bug Reports]]
   * [[:en:devel:downloads|DOWNLOADS: The official list of milestones]]
   * [[:en:upgradecb5402cb550|Upgrade coreBOS 5.4 to coreBOS 5.5]]
   * [[:en:devel:vt5tocb1|Upgrade vtiger CRM 5.4 to coreBOS 5.4]]
+  * [[:en:devel:vt60tocb|Migrate from vtiger CRM 6.0 to coreBOS]]
 
 ====== Technical Articles ======
   * [[:en:devel:debuging|Debugging]]
   * [[:en:devel:develtutorials|Development Tutorials]]
   * [[:en:devel:develtips|Developer Tips and Tricks]]
   * [[:en:devel:packaging|Packaging and Release Numbers]]
+  * [[:en:devel:corebosupdater|coreBOS Updater]]
   * [[:en:devel:translating|Translating]]
 
 
