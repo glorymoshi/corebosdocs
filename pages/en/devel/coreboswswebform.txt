@@ -4,9 +4,7 @@
 
 ===== coreBOS advanced webform creation and validation =====
 
-<WRAP center round info 70%>
-**This project takes webforms to the next level.**
-</WRAP>
+|<WRAP center round info 95%>**This project takes webforms to the next level.**</WRAP>|{{ :devel:coreboswswebform.jpg?600 |}}|
 
 coreBOS has a native webform creation and implementation feature that permits us to create a webform for a given module (accounts, contacts, leads, potentials, helpdesk,...) but in many cases, somebody filling in information on our website isn't just one entity in coreBOS. For example, somebody filling in a contact form may already be interested in some product and should be converted into a Contact **AND** an Opportunity, or when filling in a support form we should get a Contact **AND** a HelpDesk. That is what this project does, it is an easy way to convert fields captured from our webform into different entities in coreBOS.
 
@@ -16,6 +14,11 @@ While we were at it we added the **typical validation of fields**, so you can ma
 ===== Configuration and Usage =====
 
 The general idea is to set up your web form with whatever tool best fits your website software and have the form data sent to a script that will set the configuration options and call the coreBOS Webservice Webform code. This script will validate the information, connect to the defined coreBOS system and create the configured entities.
+
+You have to copy the coreBOS Webservice Webform code to some server you have access to. The //WsWebform.php// script must be accessible from your webform as when your user clicks on the send button the whole form must be redirected to this script.
+
+In the same place you have copied the //WsWebform.php// script you must also create a directory //cbwsclib// and copy inside the [[https://github.com/tsolucio/coreBOSwsLibrary/tree/master/php|PHP coreBOS Webservice Library]]. This library adds the functionality yo connect to your coreBOS to do the validations and inserts.
+
 
 All the configuration options are contained in an array at the beginning of your script:
 

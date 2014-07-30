@@ -215,7 +215,7 @@ The **response** is an object with the fields of the attachment. For each given 
   name: string, name of the file to upload,
   size: file size
   type: file type
-  content: base64_encode(file)</code>|
+  attachment: base64_encode(file)</code>|
 
 If the parameter **returnfile** is 0, the field **content** will be empty (no file sent, reducing bandwidth usage and time)
 
