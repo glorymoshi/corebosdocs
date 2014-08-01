@@ -22,6 +22,10 @@
   * [[:en:devel:corebosws|Webservice Development]]
   * [[:en:devel:coreboswswebform|coreBOS Webservice Webform]]
 
+====== Vulnerabilities ======
+  * [[en:devel:vulnerabilities|Vulnerabilities]]
+
+
 ====== Contributors ======
   * [[en:devel:contributors|Contributors]]
 

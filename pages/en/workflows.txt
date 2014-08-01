@@ -2,6 +2,7 @@
 
   * [[update_workflows|Update Workflows]]
   * [[addeltag_workflows|Add/Delete Tags Workflows]]
+  * [[relateproductservice_workflow|Related Product/Service Workflow]]
   * [[invokecustomfunction_workflows|Invoke Custom Functions Workflows]]
 
   * [[workflow_examples|Workflow Examples]]
