@@ -2,7 +2,7 @@
 
 =====Create, Update and Retrieve=====
 
-The purpose of these enhancements are to permit uploading files when we create/update documents through the webservice interface. This extension also adds functionality that permits establishing relationships with other entities to the document we are creating/editing.
+The purpose of these enhancements are to permit uploading files when we create/update documents through the webservice interface. This extension also adds functionality that permits establishing relationships with other entities to the document we are creating.
 
 Calls to REST methods of Create, Retrieve and Update maintain their profile and keep working as before. This extension adds to these calls a set of special fields which will be acknowledged by the enhancements.
 
@@ -17,7 +17,7 @@ The special fields are:
 
 With the virtual field **relations** we can establish relationships between the document and any other record. For example, we can upload a document and automatically relate it with a trouble ticket (HelpDesk).
 
-Since a document can be related to many other records, the **relations** parameter is a comma separated list of entities. The document being created/updated will be related to all of them.
+Since a document can be related to many other records, the **relations** parameter is a comma separated list of entities. The document being created will be related to all of them.
 
 This new **relations** field will also be returned when executing a Retrieve. The format will be a comma separated list of related entities.
 
@@ -27,6 +27,10 @@ To permit uploading documents we have added another virtual field called **filen
   * type: type of the file being sent
   * content: base64 encoded string with the full contents of the file
 
+As of **coreBOS 5.6** you will also receive another virtual field when retrieving a document record. This field is called **_downloadurl** and represents the absolute path of the file attachment in the application. This will permit easy linking from external applications and websites. This functionality is specially useful for e-commerce sites.
+
+<WRAP center round info 60%>the **_downloadurl** virtual field will only be present in documents with a file location type of Internal</WRAP>
+
 Next you can find some examples.
 
 
@@ -34,10 +38,10 @@ Next you can find some examples.
 
 <code php>
 <?php
-include_once('vtwsclib/Vtiger/WSClient.php');
+include_once('cbwsclib/WSClient.php');
 require_once 'debugoutput.php';
 
-$url = 'http://localhost/parkare/webservice.php';
+$url = 'http://localhost/corebos/webservice.php';
 $wsClient = new WSClient($url);
 // Login
 if (!$wsClient->doLogin('admin', 'pon la que corresponda')) {
@@ -70,7 +74,7 @@ $contactData  = array(
 	'filedownloadcount'=> 0,
 	'filestatus'=>1,
 	'folderid' => '22x1',
-	'relations' => '9x66873',  // además de crear el documento con el adjunto lo dejará relacionado con este registro
+	'relations' => '9x66873',  // besides creating the document it will relate it to this record
 );
 
 //encode the object in JSON format to communicate with the server.
@@ -91,10 +95,10 @@ There is no visual difference from a normal call, the difference is in the input
 ====Update====
 <code php>
 <?php
-include_once('vtwsclib/Vtiger/WSClient.php');
+include_once('cbwsclib/WSClient.php');
 require_once 'debugoutput.php';
 
-$url = 'http://localhost/parkare/webservice.php';
+$url = 'http://localhost/corebos/webservice.php';
 $wsClient = new WSClient($url);
 // Login
 if (!$wsClient->doLogin('admin', 'pon la que corresponda')) {
@@ -125,7 +129,7 @@ $contactData  = array(
 	'filestatus'=>1,
 	'folderid' => '22x1',
 	'id' => '7x134089',
-	'relations' => '3x1151',
+	// 'relations' NOT SUPPORTED ON UPDATE: use set_relations webservice call
 );
 
 //encode the object in JSON format to communicate with the server.
@@ -195,9 +199,10 @@ array
       'folderid' => string '22x1' (length=4)
       'note_no' => string 'DOC5379' (length=7)
       'id' => string '7x134063' (length=8)
-      'relations' => !!!  ESTE ES NUEVO !!!
+      'relations' => !!! THIS IS NEW !!!
         array
-          0 => string '9x66873' (length=7)   !!! Esta relacionado con el registro 66873 de la entridad 9 !!!
+          0 => string '9x66873' (length=7)   !!! related to record 66873 of the entity 9 !!!
+      '_downloadurl' => string 'http://localhost/coreBOSwork/storage/2014/August/week2/134063_1.jpg' (length=64)
 </code>
 =====Retrieve Attachment=====
 
@@ -279,7 +284,7 @@ exit;
 Raw response (json) RetrieveDocAttachment
 
 array
-  'url' => string 'http://localhost/parkare/webservice.php' (length=39)
+  'url' => string 'http://localhost/corebos/webservice.php' (length=39)
   'code' => int 200
   'headers' => 
     array
