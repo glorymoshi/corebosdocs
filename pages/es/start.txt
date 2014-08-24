@@ -1,7 +1,8 @@
 {{description>coreBOS - The one stop software solution for your business.}}
 {{keywords>marketing, email, invoice, support, tickets, sales}}
 
-<wrap em>[[http://corebos.tsolucio.com|Orgulloso miembro de la familia coreBOS!]]</wrap>
+<wrap em>[[http://corebos.org|Orgulloso miembro de la familia coreBOS!]]</wrap>\\
+<wrap em>Visita nuestra [[http://corebos.org|Web]] y siguenos en [[https://plus.google.com/communities/109845486286232591652|Google+]] y [[http://www.linkedin.com/groups/coreBOS-7479130?trk=my_groups-b-grp-v|LinkedIn]]</wrap>
 
 ====== coreBOS  Documentación ======
 
