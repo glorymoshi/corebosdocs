@@ -1,26 +1,22 @@
-====== Install and Update ======
+====== Instalar y Actualizar ======
 
-How to install and update the application
+Como instalar y actualizar la aplicación
 
-[[:en:devel:downloads|DOWNLOADS: The official list of milestones]]
+FIXME: Hay que traducir esto > de momento mira en inglés
 
-====== Install ======
+====== Instalar ======
 
   * [[install560|Install coreBOS 5.6.0]]
   * [[install550|Install coreBOS 5.5.0]]
   * [[install540|Install coreBOS 5.4.0]]
 
-====== Update ======
+====== Actualizar ======
 
   * [[upgradecb5502cb560|Upgrade from coreBOS 5.5.0 to coreBOS 5.6.0]]
   * [[upgradecb5402cb550|Upgrade from coreBOS 5.4.0 to coreBOS 5.5.0]]
   * [[upgradevt2cb540|Upgrade from vtiger CRM 5.4.0 to coreBOS 5.4.0]]
 
 
-====== Third Party Extensions ======
+====== Extensiones de Terceros ======
 
   * [[vtdziner|vtDZiner]]
-
-====== Frequently Asked Questions ======
-
-  * [[installfaq|Installation FAQ]]

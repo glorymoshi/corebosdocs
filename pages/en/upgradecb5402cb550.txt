@@ -103,7 +103,7 @@ So the steps here are identical to the three situations described before just th
   * click on **Apply All**
 
 
-<WRAP center round important 85%>Remember to apply the database changes using **coreBOS Updater** and to manually change your config.inc.php ~~issue:120~~, for speed optimization we have require adding a line to your config.inc.php, **THIS IS VERY IMPORTANT** or some parts of the application may not work correctly.
+<WRAP center round important 85%>Remember to apply the database changes using **coreBOS Updater** and to manually change your config.inc.php ~~issue:120~~, for speed optimization we require adding a line to your config.inc.php, **THIS IS VERY IMPORTANT** or some parts of the application may not work correctly.
     - edit config.inc.php and look for the lines<code>// default charset default value = 'UTF-8' or 'ISO-8859-1'
 $default_charset = 'UTF-8';</code> note that your value may be different from UTF-8, now add this line after the assignment<code>$default_charset = strtoupper($default_charset);  // DO NOT MODIFY THIS LINE, IT IS IMPORTANT</code> so it all ends up looking like this:<code>// default charset default value = 'UTF-8' or 'ISO-8859-1'
 $default_charset = 'UTF-8';
