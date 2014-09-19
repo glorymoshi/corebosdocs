@@ -9,3 +9,4 @@
   * [[en:devel:addworkflowtask|How to add a workflow task with configuration screen]]
   * [[en:devel:capturemodulefieldinpopup|How to fill in additional fields when selecting a record in a popup screen]]
   * [[en:devel:add_special_block|How to add a special block to a module]]
+  * [[en:devel:add_actions|How to add action links to a module]]
