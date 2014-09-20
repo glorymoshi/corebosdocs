@@ -1,0 +1,13 @@
+====== Administration FAQ ======
+
+??? "report to" field in user profile have some influence in hierarchy and permission?
+
+!!! No - it helps in identifying the owner. Sharing access (record level) permission is based on Roles instead.
+
+??? How to increment maximum file upload. File upload field with message 'Maximum upload size is MB'
+
+!!! Forums and Googles say to edit the php.ini file, increasing both upload_max_filesize and also post_max_size. I set them both to 25M & restarted server, but still no joy.
+
+So then changed config.inc.php for the upload_maxsize to 25000000 and it worked. NOTE: The configuration editor will show a value of 25, (to the right of “(Max 5MB)” but I tested it and it DOES work. Interestingly, it also shows the proper 25M value when the user uploads a file/document. 
+
+** reilogix ** [[https://discussions.vtiger.com/index.php?p=/discussion/166163/file-upload-field-with-message-039maximum-upload-size-is-mb039#Item_3|Forum Thread]]
