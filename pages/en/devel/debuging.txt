@@ -30,6 +30,7 @@ Make sure logs/ folder has write access to apache server process owner.
 
 =====AJAX and Javascript=====
   * Chrome and Firefox have webdevelopers tools and firebug.
+  * [[http://codex.wordpress.org/Using_Your_Browser_to_Diagnose_JavaScript_Errors#Step_3:_Diagnosis|Interesting explanation on how to see javascript errors]]
 
 =====Webservice=====
   * What I usually do is edit the curl call and dump the raw result coming from coreBOS. Obviously the log4php system is also very useful in this case.
