@@ -38,6 +38,22 @@ If you reach this point, I recommend you register for an account at [[http://sen
 [[https://discussions.vtiger.com/index.php?p=/discussion/55230/smtp-mail-settings-for-office-365-exchange/p1]]\\
 [[http://technet.microsoft.com/en-us/library/dn554323.aspx]]\\
 
+
+=====  FAQ =====
+
+??? Method for installing coreBOS on a 1and1 Linux Shared Hosting Package
+
+!!! {{:en:corebos:vtigercrm_1and1_installation.pdf|This very old PDF file}} shared on the forum explains some issues. The important part is this one:
+
+Open the file vtigercrm/modules/Emails/class.phpmailer.php in your favourite text editor.
+
+Find the following lines:
+
+<code>function IsSMTP() {
+$this->Mailer = "smtp";</code>
+
+Change "smtp" to "sendmail"
+
 ====== Debugging errors ======
 
 {{page>en:devel:debuging#email}}
