@@ -16,11 +16,13 @@
   * [[:en:devel:packaging|Packaging and Release Numbers]]
   * [[:en:devel:corebosupdater|coreBOS Updater]]
   * [[:en:devel:translating|Translating]]
+  * [[:en:devel:stresstestlog|Logging stress test]]
 
 
   * [[:en:devel:coreboscp|coreBOS Customer Portal Development]]
   * [[:en:devel:corebosws|Webservice Development]]
   * [[:en:devel:coreboswswebform|coreBOS Webservice Webform]]
+  * [[:en:devel:installprocess|coreBOS Installation Process]]
 
 ====== Vulnerabilities ======
   * [[en:devel:vulnerabilities|Vulnerabilities]]
