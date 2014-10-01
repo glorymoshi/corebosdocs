@@ -202,3 +202,38 @@ For this to work we must set the variable 'LISTVIEW_DEFAULT_SORTING' to true in 
 <code php>cd <application root directory>
 php -r "require_once 'include/utils/UserInfoUtil.php'; RecalculateSharingRules();"
 </code>
+
+??? When we go to create a quote, we choose the opportunity to relate, with a popup window to select among the created opportunities. Is there any way to **ONLY** see the open opportunities, so that by default all closed opportunities do not appear. (Cuando vamos a hacer un presupuesto como saben escogemos la oportunidad a relacionar, donde aparece una ventana para elegir la oportunidad creada. Hay alguna manera en que NO aparezca la oportunidad que se haya cerrado o clasificado en (Cerrado Ganado) ya que como saben, siguen apareciendo todas las oportunidades que tenga el vendedor).
+
+!!! This should work although I have my doubts about this functionality because I understand that you may want to associate the closed won opportunity to the quote. NOTE that the patch affects Quotes and SalesOrders.
+
+<code>diff --git a/Popup.php b/Popup.php
+index 16e7048..c6faf32 100644
+--- a/Popup.php
++++ b/Popup.php
+@@ -237,6 +237,9 @@ else
+ 		$url_string .='&recordid='.vtlib_purify($_REQUEST['recordid']);
+         	$where_relquery = getRelCheckquery($currentModule,$_REQUEST['return_module'],$_REQUEST['recordid']);
+ 	}
++	if ($currentModule=='Potentials' and (isset($_REQUEST['restrictclosed']) and $_REQUEST['restrictclosed']=='1')) {
++		$where_relquery = " and sales_stage not like 'Closed%' ";
++	}
+ 	if(isset($_REQUEST['relmod_id']) || isset($_REQUEST['fromPotential']))
+ 	{
+ 		if($_REQUEST['relmod_id'] !='')
+diff --git a/include/js/general.js b/include/js/general.js
+index d0feb0a..72db333 100755
+--- a/include/js/general.js
++++ b/include/js/general.js
+@@ -2379,9 +2379,9 @@ function selectPotential()
+ 		parent_module = 'Contacts';
+ 	}
+ 	if(record_id != '')
+-		window.open("index.php?module=Potentials&action=Popup&html=Popup_picker&popuptype=specific_potential_account_address&form=EditView&relmod_id="+record_id+"&parent_module="+parent_module,"test","width=640,height=602,resizable=0,scrollbars=0");
++		window.open("index.php?module=Potentials&action=Popup&html=Popup_picker&popuptype=specific_potential_account_address&form=EditView&restrictclosed=1&relmod_id="+record_id+"&parent_module="+parent_module,"test","width=640,height=602,resizable=0,scrollbars=0");
+ 	else
+-		window.open("index.php?module=Potentials&action=Popup&html=Popup_picker&popuptype=specific_potential_account_address&form=EditView","test","width=640,height=602,resizable=0,scrollbars=0");
++		window.open("index.php?module=Potentials&action=Popup&html=Popup_picker&popuptype=specific_potential_account_address&form=EditView&restrictclosed=1","test","width=640,height=602,resizable=0,scrollbars=0");
+ }
+ //to select Quote Popup
+ function selectQuote()</code>
