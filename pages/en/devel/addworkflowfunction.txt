@@ -7,7 +7,7 @@ Here we explain how to create the first type of workflows, [[en:devel:addworkflo
 A **workflow method or custom function** needs a name to show in the configuration section, a class that will extend VTTask and do the work, a template to show the configuration options on screen and it will be associated to certain modules and not to others. Finally it may be active or not depending on a certain module being installed or not.
 
   * **Add new task definition to the application.** This is done by inserting a record with the details in the //com_vtiger_workflowtasks_entitymethod// table.
-    * **method_name**: external name, visible when configuring workflow: **available through the Invoice Custom Function** workflow task
+    * **method_name**: external name, visible when configuring workflow: **available through the Invoke Custom Function** workflow task
     * **function_name**: the name of the function to be called, a normal PHP function
     * **function_path**: the script on the file system that contains our new function
     * **module_name**: the name of the module that the method is available for
