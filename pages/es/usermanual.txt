@@ -5,3 +5,4 @@
   * [[corebosapps|coreBOSApps]]
   * [[cambio_moneda_qsoi|Obtención del precio de producto al cambiar de moneda en los módulos de inventario]]
   * [[coreboscyp|Módulo de control de pagos y contabilidad]]
+  * [[using_filters|Utilizando Filtros]]
