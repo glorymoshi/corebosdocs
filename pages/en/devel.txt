@@ -13,6 +13,7 @@
   * [[:en:devel:debuging|Debugging]]
   * [[:en:devel:develtutorials|Development Tutorials]]
   * [[:en:devel:develtips|Developer Tips and Tricks]]
+  * [[:en:devel:helperscripts|Helper Scripts]]
   * [[:en:devel:packaging|Packaging and Release Numbers]]
   * [[:en:devel:corebosupdater|coreBOS Updater]]
   * [[:en:devel:translating|Translating]]
