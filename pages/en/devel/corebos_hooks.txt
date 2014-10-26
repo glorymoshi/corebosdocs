@@ -1,0 +1,49 @@
+====== coreBOS Hooks and Events ======
+
+===== Explanation =====
+TBD  FIXME
+
+
+===== Types and usage =====
+TBD  FIXME
+
+==== Popup capture hook =====
+
+This hook happens in the GUI on the browser in javascript when the user selects a record inside the popup screen. It launches your javascript code AFTER having done the work of selecting the record and will permit you to add some additional functionality to the selection process.
+
+The typical use case is to fill in some additional fields besides the ones that the default behavior does. Since the popup screen is closed and we will usually fill in the additional fields via an AJAX call, the function is executed in the browser window, not the popup screen.
+
+To hook into this functionality you must create a function in your module's javascript file with the name:
+
+<code>{ModuleName}setValueFromCapture</code>
+
+this function will receive the parameters:
+
+^recordid|the crmid of the record that has been selected in the popup|
+^value|the text representation of the record that has been selected in the popup|
+^target_fieldname|the destination field name in the form in the browser|
+
+To test the functionality I created this function in //Potentials.js//
+
+<code>function PotentialssetValueFromCapture(recordid,value,target_fieldname) {
+	console.log(recordid,value,target_fieldname);
+	var url = "module=Accounts&action=AccountsAjax&file=Save&accountname=vtiger&dup_check=true&record=3";
+	new Ajax.Request(
+		'index.php',
+		{
+			queue: {
+				position: 'end',
+				scope: 'command'
+			},
+			method: 'post',
+			postBody:url,
+			onComplete: function(response) {
+				var str = response.responseText;
+				document.EditView.description.value = str;
+			}
+		}
+		);
+
+}</code>
+
+If you add this code and then go to select an account/contact you will see that the Description field will get filled in with the message. The ajax call launched the duplicate account functionality, so depending on your install it will be an OK or a NOK message. The important thing is to see the example, I could have filled in any field with any information.
