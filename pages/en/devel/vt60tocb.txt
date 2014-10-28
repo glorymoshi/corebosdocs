@@ -1,0 +1,14 @@
+====== Migrate from vtiger CRM 6.0 to coreBOS 5.x======
+
+The steps to migrate your vtiger CRM 6.0 to coreBOS 5.x are:
+
+  * get a copy of coreBOS from github
+  * install coreBOS normally
+  * delete the database you just installed and recover a dump of your vtiger CRM 6.0 database with the same name you used for the coreBOS install
+  * at this step your coreBOS install is pointing at the vtiger CRM 6.0 and does not work
+  * copy the migration script to the root of the coreBOS install
+  * execute the script<code>http://your_server/your_corebos/migrate_from_vt6.php</code>
+  * copy all your documents from the vtiger CRM install: directly copy all the files in the //storage// directory from one to the other
+  * copy logos and the like which are in the //test/logo// directory
+  * enter coreBOS and activate modules in module manager if necessary
+  * apply [[en:devel:corebosupdater|coreBOS Updater changesets]]
