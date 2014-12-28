@@ -12,6 +12,8 @@ How to install and update the application
 
 ====== Update ======
 
+  * [[upgradevt2cb|Upgrade from vtiger CRM 5.4.0 to coreBOS]]
+
   * [[upgradecb5502cb560|Upgrade from coreBOS 5.5.0 to coreBOS 5.6.0]]
   * [[upgradecb5402cb550|Upgrade from coreBOS 5.4.0 to coreBOS 5.5.0]]
   * [[upgradevt2cb540|Upgrade from vtiger CRM 5.4.0 to coreBOS 5.4.0]]
