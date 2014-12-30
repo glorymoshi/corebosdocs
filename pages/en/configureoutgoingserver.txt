@@ -14,7 +14,7 @@ The outgoing server settings can be set in the Settings section of the applicati
 
 ^Outgoing Server|this is the server to which we must connect to send emails. This field supports a special extended syntax with which we can specify the protocol and port to use like this: <code>ssl://smtp.gmail.com:467</code> or <code>tsl://msexchange:587</code>|
 ^User Name and Password|the user name and passwords that will give us access to the server|
-^Email From|This field will force all emails leaving the system to seem to come from this email. It is quite restrictive, since no user will get the answers but can send if your server is among those that do not work with RELAY (see above)|
+^Email From|This field will force all emails leaving the system to seem to come from this email. Although the email will be sent from this account, the "Reply to" field will be the email of the user sending the email. Thus if the recipient clicks on respond the response will be sent to the user. I suppose this has some spam/company image justification|
 ^Requires Authentication?|permits us to define the protocol to use for the connection|
 
 When you save the connection data, coreBOS will launch a test to connect and send an email. If the email is not successfully sent **NO** data will be saved. We will be returned to the configuration page with a message saying that the email could not be sent. At this point there is a connection, authentication or lack of RELAY support error and you must go to the [[en:devel:debuging#email|debugging techniques]].
