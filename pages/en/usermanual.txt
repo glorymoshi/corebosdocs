@@ -6,3 +6,4 @@
   * [[invoiceassetssc|Invoice relation with assets and service contracts]]
   * [[using_filters|Using and Defining Filters]]
   * [[helpdesk|HelpDesk]]
+  * [[calendar|Calendar]]
