@@ -12,3 +12,9 @@ Lo ideal sería que se pudiera ver esta lista de recursos desde la factura, la c
 ??? Outlook plugin 2.3 unknown error
 
 !!!  jaysmit9: I've found a partial solution to the problem. The /etc/hosts name must be exactly the same name in the https URL I say this is a partial problem because I have multi-domains hitting the same server. I need it to work for all!  [[https://discussions.vtiger.com/index.php?p=/discussion/165067/outlook-plugin-2-3-unknown-error|You can find the thread here.]]
+
+??? ¿Es posible “cerrar” registros (por ejemplo, proyectos) de modo que no se eliminen pero no aparezcan en los listados?
+
+!!! En el siguiente vídeo explico la solución comúnmente aceptada para hacerlo utilizando el sistema de permisos
+
+{{youtube>mOJWDOEpQb4}}
