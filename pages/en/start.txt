@@ -7,6 +7,7 @@
 ====== coreBOS Documentation Project ======
 
 <menu col=1,align=left>
+  <item>Documentation Information|Goals and guidelines of the documentation|docguide|{{menu:info_32.png?direct|}}</item>
   <item>Install and Update|How to install and update the application|installupdate|{{menu:software-icon_32.png?direct|}}</item>
   <item>User Manual|How to use the application|usermanual|{{menu:little_knight_32.png?direct|}}</item>
   <item>Administration Manual|How to administrate the application|adminmanual|{{menu:hammer_32.png?direct|}}</item>
