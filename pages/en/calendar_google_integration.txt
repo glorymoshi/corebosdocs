@@ -40,12 +40,13 @@ We implement this approach so it is easy to define which events should be import
 
 We have updated Google Integration from API v.1 //(already deprecated by Google)// to the newest API v.3.
 
-The integration is being done through Service Account, which lets a user login to Google Calendar in background by previously entering three parameters: 
+The integration is being done through Web Application Client ID, which lets a user login to Google Calendar in background by previously entering three parameters: 
   * API Key, 
-  * Service Account Client ID.
-  * p12 Key file.
+  * Client ID.
+  * Client Secret
+  * Redirect URL.
 
-Due to Google Security issues, integration does not require user's email password anymore. So a user has to configure his Google Account in order to get those three values and give privileged access to certain calendars.
+Due to Google Security issues, integration does not require user's email password anymore. So you just to config this parameters and validate for **admin user**, the rest of users, just click in **//Authorize and Connect//** link to give permission to manage and share their calendars.
 
 
 =====Here's a step by step guide to help you configure your Google Account.=====
@@ -64,53 +65,67 @@ Due to Google Security issues, integration does not require user's email passwor
 
 {{ :createapikey.png?700 |}}
 
-5.- Create Service Account by clicking **Create New Client ID** in the OAuth section. Choose Service Account Option
+5.- Create Web Application by clicking **Create New Client ID** in the OAuth section. Choose Service Account Option
+{{ :en:crear_id_cliente_1.png?700 |}}
 
-{{ :serviceacc.png?700 |}}
+6.- For permit you to create this Client ID , you have to set the values for you Authoritation Screen. 
 
-6.- Automatically a file will be downloaded. Save it. It is the Key file you will need as one of the three parameters. 
+{{ :en:pantalla_de_autorizacion.png?700 |}}
 
-{{ :p12file.png?700 |}}
+7.- Now you can finish to config the Client ID, here is important that you write the url to your coreBOS/sync.php in Redirect URI. For example: **http://yourcorebos.com/sync,php**. 
 
-7.- You'll get a view like the next image. The selected text is the Client Id or the second parameter you'll need (only put that part) and the API Key is the third one. 
+{{ :en:crear_id_cliente_2.png?700 |}}
 
-{{ :serviceacckey.png?700 |}}
+==== After that, you can see the all data that you need to config Calendar4You. ====
 
-8.- Now Copy the Email Address field of the Service Account 
 
-{{ :emailservacc.png?700 |}}
+{{ :en:todos_los_datos.png?800 |}}
 
-9.- Now go into your Google Calendar. Open the **Settings** (up on the right corner of the calendar). Go into the second tab, **Calendars** and choose the Calendar/s you want to share with coreBOS Calendar
+8.- Now access to your coreBOS like a admin user to copy the last parameters in Calendar4You **settings** 
 
-{{ :calendars.png?700 |}}
+{{ :en:administrator.png?350 |}}
 
-10.- Choose the second tab, **Share this Calendar** and in the Share with specific persons section Paste the Email address previously copied. Give **write access** to that email address and Save. Do this for the other calendars as well.
+9.- Press on **Settings** icon to paste the next value in the next window.
 
-{{ :share.png?700 |}}
+{{ :en:settings.png?250 |}}
 
-11.- Make sure the **Calendar API** is active in your project by going to **API** and activating it. Calendar API should appear in the list of active APIs
+  * API Key,
+  * Client ID.
+  * Client Secret
+  * Redirect URL.
+{{ :en:calendar_settings_1.png?700 |}}
 
-{{ :calendargoogleapiactive.png?500 |}}
+==== The checkbox, **insert from Google?** is for read the old and new events that you create in you Google Calendar and create this events in you Calendar4You in coreBOS. ====
 
-12.- Now your configuration is done. All you have to do is go into coreBOS Calendar Module. Click the **Setting** button and upload the p12 file you previously downloaded. 
+{{ :en:calendar_settings_2.png?700 |}}
 
-{{ :upload.png?700 |}}
+=== Now you can press Save button to verify this data and if this date is correct the window will be close. ===
 
-{{ :googlekeys.png?700 |}}
+11.- After to save the previous data, you have click again in **Settings** {{ :en:settings.png?250 |}} and you can see that you can clic in a new link called **Authorize and Connect** , for permit coreBOS to manage your calendars. Now this Authorization is for the actual google user that you have connect in your browser. If you disconnect, you will can to choose an other user to give this authorization
 
-13.- Now you can put the three configuration parameters in the three fields. 
+{{ :en:authorize_and_connect_1.png?700 |}}
 
-{{ :calconfig.png?700 |}}
+{{ :en:authorize_and_connect_2.png?700 |}}
 
-14.- And choose the calendar you want to synchronize on the right of Call or Meeting Activity List
+11.- After to permit, you can to select your calendars to add a event type like a Meetings
 
-{{ :calselect.png?700 |}}
+{{ :en:select_calendars.png?700 |}}
 
-15.- Create an event and you'll see it on Google Calendar
+12.- Now your configuration is done, and the rest of users just have to access to their Calendar4You , try to add a google calendar to a event type and in the first time they will see the famous **Authorize and Connect** link.
+{{ :en:omar_llorens.png?250 |}}
 
-{{ :event.png?700 |}}
+{{ :en:omar_authorize_connect_1.png?700 |}}
 
-{{ :eventgoogle.png?700 |}}
+== Click on the link , permit coreBOS to manage the calendars and finally you will can to select your calendars to your event types. ==
+
+
+{{ :en:omar_authorize_connect_2.png?700 |}}
+{{ :en:omar_authorize_connect_3.png?700 |}}
+
+
+13.- Just an other thing. For active the Calendar4You Crons to sync the events with Google Calendar, you have to go to coreBOS Settings -> Scheduler the last two crons that you can see the next image.
+
+{{ :en:cron_tasks_c4y.png?700 |}}
 
 
 That's it. Enjoy!
