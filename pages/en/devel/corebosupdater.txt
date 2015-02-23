@@ -13,7 +13,7 @@ So with the approach above and the fact that the majority of changes we make are
 Enter **coreBOS Updater**.
 
 **coreBOS Updater** is a tool that will control the state of our database with respect to the code and will be able to automatically apply the pending changes that are needed. This way the upgrade process is converted into these steps:
-  - update your code with git (or manually if your brave :-))
+  - update your code with git (or manually if you are brave :-))
   - log into the application and go to the coreBOS Updater module
   - click on the "Load Updates" button
   - click on the "Apply All" button
