@@ -19,6 +19,10 @@ This script adds the comment functionality to any module. Copy it to the root of
 ===== composerinstallmodule.php =====
 This is the composer installer worker script. It is in charge of launching the install/update of modules installed using [[https://getcomposer.org/|composer]]. More on this can be read in the Perspective Initiative.
 
+===== convertTextFieldToPicklist.php =====
+This script converts a uitype 1 text field into a picklist respecting all the current values in the field. It accepts two parameters:
+  * module: the name of the module which contains the field to transform
+  * fieldname: the name of the field to convert
 ===== coreBOSEvents* =====
 Script to load and show the functionality of the [[en:devel:corebos_hooks|coreBOS Eventing system]]
 ===== deleteModule.php =====
