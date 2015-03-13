@@ -23,6 +23,8 @@ When you save the connection data, coreBOS will launch a test to connect and sen
 When we are returned to the settings page, the previous values are present. We cannot see the password field, but is it most probably INCORRECT, the value you introduced is NOT filled in again. Please introduce the password on ALL tests that you launch.
 </WRAP>
 
+<WRAP center round important 75%>coreBOS prior to March 2015 did not support sending emails with an empty body. The error message returned was very misleading indicating that there was a problem with the email configuration. **DO NOT test** emails with empty bodies. As of March 2015 emails with no body are supported.</WRAP>
+
 If we reach this message while debugging:
 <code>SMTP -> FROM SERVER:550 5.7.1 Client does not have permissions to send as this sender
 SMTP -> ERROR: DATA END command failed: 550 5.7.1 Client does not have permissions to send as this sender
@@ -30,7 +32,7 @@ SMTP Error: data not accepted.</code>
 
 The mail server is saying that we do NOT have permission to send. It basically says that the error is because the account that is connected must be the same as the sender, the server does not support RELAY.
 
-If you reach this point, I recommend you register for an account at [[http://sendgrid.com|sendgrid]], it really works great and gives you much more information than you have now. They have free accounts with a limit of 200 emails a day and for a small amount of money you can do even more. We use it regularly to mass mailings from coreBOSCRM and to control administrative email deliveries. It is worth more than it costs.
+If you reach this point, I recommend you register for an account at [[http://sendgrid.com|sendgrid]], it really works great and gives you much more information than you have now. They have free accounts with a limit of 400 emails a day and for a small amount of money you can do even more. We use it regularly to mass mailings from coreBOSCRM and to control administrative email deliveries. It is worth more than it costs.
 
 ===== Some pages related to problems configuring outgoing server =====
 
@@ -54,6 +56,9 @@ $this->Mailer = "smtp";</code>
 
 Change "smtp" to "sendmail"
 
+??? How do I configure a gmail account?
+
+!!! [[http://discussions.corebos.org/viewtopic.php?f=7&t=1020&p=2240|This forum thread says]] that you have to use **smtp.gmail.com** and select **TLS** as the authentication method. Also leave the "Email from" field empty as (I think) gmail does not support that feature.
 ====== Debugging errors ======
 
 {{page>en:devel:debuging#email}}
