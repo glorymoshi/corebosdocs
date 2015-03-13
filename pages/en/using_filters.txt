@@ -5,6 +5,7 @@ FIXME TBD
 
 ===== Meta variables for special fields =====
 
+==== Current User ====
 When searching on user fields like //Assigned To//, //Creator// or //Modified By// the system expects you to give the full user name to search on. In other words you have to use the first and last name of the user like this:
 
 <code>assigned_to = user.first_name + ' ' + user.last_name</code>
@@ -14,3 +15,7 @@ A typical situation that arises often is the need to create a filter and show on
 To accomplish this we can use a special meta-variable when defining our filters for the user fields. This field is called "**current_user**" as can be seen in the next image.
 
 {{ :en:corebos:filter_current_user.png?800 |}}
+
+==== Blank Dates ====
+
+You can search on blank dates using the dollar sign $
