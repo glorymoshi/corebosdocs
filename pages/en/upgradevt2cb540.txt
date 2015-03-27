@@ -1,5 +1,8 @@
 ====== Upgrade from vtiger CRM 5.4.0 to coreBOS 5.4.0 ======
 
+<WRAP center round info 70%>The process detailed below is valid, but, the existence of coreBOS Updater has changed everything and made upgrading and keeping up to date MUCH easier. [[en:upgradevt2cb|The process detailed here is easier]].</WRAP>
+
+
 This first set of changes is basically paperwork; apply all the patches and enhancements we have developed along the way and that have been shared in the developer's list and trac.
 
 [[en:devel:upgradevt2cb54changes|You can find the full details of the changes made on this page]].

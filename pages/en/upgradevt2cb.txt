@@ -1,4 +1,4 @@
-====== Upgrade from vtiger CRM 5.4.0 to coreBOS ======
+====== Upgrade from vtiger CRM 5.4.0 to coreBOS using coreBOS Updater======
 
   * make a copy of your database
   * get a copy of the latest version of coreBOS and copy it into a subdirectory on your server
