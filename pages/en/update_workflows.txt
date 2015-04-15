@@ -1,4 +1,4 @@
-====== Update Workflows ======
+====== Update Workflow Tasks ======
 
 TBD
 
@@ -48,5 +48,6 @@ The next image should achieve what you are asking:
 
 {{ :en:corebos:workflow:calcwf.png?700 |}}
 
-<WRAP center round important 60%>Note that this is NOT time based, it will not calculate automatically when "today" is over 60 days, you will have to edit the record EVERY day to see the changes.</WRAP>
+<WRAP center round important 70%>Note that this is NOT time based, it will not calculate automatically when "today" is over 60 days, you will have to edit the record EVERY day to see the changes.
+As of March 2015 you can use scheduled workflows for time based workflows.</WRAP>
 

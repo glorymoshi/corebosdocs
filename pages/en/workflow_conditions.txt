@@ -14,7 +14,7 @@ Based on this question from a forum member:
 
 ??? We would like to set the "Workflow for Ticket Change, not from the Portal" workflow to NOT send emails when the last modified user is the same as the assigned to user. If a person working on the ticket puts some notes in there, we do not want an immediate email to themselves. But, if someone else adds notes, we do want the assigned to user to get an email.
 
-To solve this use case, which is common, we have enhanced coreBOS (starting at [[https://github.com/tsolucio/corebos/commit/9a5307e1c28f87d42def73aaea606db9929349b6#diff-d41d8cd98f00b204e9800998ecf8427e|commit 9a5307]] or **version 5.6**) to support accessing the fields of the "assigned to" user of the main module.
+To solve this use case, which is common, we have enhanced coreBOS (starting at [[https://github.com/tsolucio/corebos/commit/9a5307e1c28f87d42def73aaea606db9929349b6#diff-d41d8cd98f00b204e9800998ecf8427e|commit 9a5307]]) to support accessing the fields of the "assigned to" user of the main module.
 
 <WRAP center round important 80%>It is ONLY for the fields of the "assigned user" because those are already present when evaluating the condition, no extra effort is needed except picking them up.</WRAP>
 

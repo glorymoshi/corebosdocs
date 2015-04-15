@@ -1,4 +1,4 @@
-====== Add/Delete Tags Workflows ======
+====== Add/Delete Tags Workflow Tasks ======
 
 This workflow task permits you to add or delete tags on the object being saved. Either associated to the current user doing the operation or massively to all users.
 
