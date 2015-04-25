@@ -22,8 +22,8 @@ How to install and update the application
 
 ====== Third Party Extensions ======
 
+  * [[en:devel:thirdparty|FAQ]]
   * [[vtdziner|vtDZiner]]
-
 ====== Frequently Asked Questions ======
 
   * [[installfaq|Installation FAQ]]
