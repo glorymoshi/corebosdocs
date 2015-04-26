@@ -20,6 +20,9 @@ So then changed config.inc.php for the upload_maxsize to 25000000 and it worked.
 
 {{ :en:corebos:detailviewurl.png?700 |}}
 
+<WRAP center round info 70%>Versions of coreBOS after February 2015 have a new meta-variable called //RecordId// which you can use also.</WRAP>
+
+
 ??? My vtigercron.php script isn't working because I don't have PHP CLI installed. How can I fix that?
 
 !!! I found this solution via google, so I guess more people have had problems. I changed line 19 of vtigercron.php into:
@@ -57,3 +60,20 @@ FIX INSTRUCTIONS
 For example, simple crons like //SendReminder// which simply launches an SQL command and sends an email should have no problem in any environment, but workflows, scheduled reports or importing could have a different set of issues depending on the environment. Exactly apache2handler means you are running in a shared environment and under normal user restrictions, that could produce permission issues with the scheduled reports file attachments, in which case the email could not pick up the generated file, but that really depends on the configuration of the operating system....
 
 In short, you most probably won't have any problems with the change, but it is difficult for us to state that categorically.
+
+??? I know as a security feature vtigercrm and coreBOS will auto log out a user after a certain time. Is there a way to adjust how long the system waits before auto logging out a user?
+
+!!! Neither vtiger crm nor coreBOS have any timeout logout security measure. This is managed by PHP. What vtiger CRM and coreBOS do is save authentication information in the PHP session. If this session is deleted then your browser cannot login and will ask you for credentials again. For security reasons, PHP deletes the session information every now and then and you get kicked out of coreBOS. So to change this behavior you have to configure your PHP, not coreBOS. [[http://lmgtfy.com/?q=php+garbage+collection+gc_probability|Look for gc_probablity, gc_maxlifetime and the other garbage collector (gc_) variables]].
+
+??? From Portal column doesn't display the correct value. It seems that even though my customers create tickets from the Customer Portal, the column From Portal is NO for all the tickets. How does this work? Should it not be YES for the tickets created from Customer Portal?
+
+!!! The From Portal field is really an internal field for ticket notification management. So it's value is forced so that the workflow notifications work correctly. The value of this internal field is changed so that the notifications go out when they should.
+
+If you need a way to determine if a given ticket came from the portal or not I would recommend you do this:
+
+  * create yourself a custom field checkbox called "Created by portal" (or something like that)
+  * modify the "Workflow for Ticket Created from Portal" workflow by adding an "Update Field" task and set your custom field to true
+  * use your custom field for filtering and reports
+  * forget that the from_portal field exists :-)
+
+In any case if you do want to go down the path of changing the way that field works and adapting the workflows accordingly it all happens in the file: modules/HelpDesk/HelpDeskHandler.php
