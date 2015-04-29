@@ -30,8 +30,11 @@ This is an example script to show how to delete a module
 
 
 ===== evalwf.php =====
-This script is for debugging the workflow process. It executes a give workflow and gives us the result on screen.
+This script is for debugging the workflow process. It executes a given workflow, against a record and gives us the result of the evaluation of the conditions on screen. If the workflow is a scheduled workflow it will show us the full SQL generated. If it is an event based workflow it will tell us if it evaluates to true or false for the record. 
 
+===== runwftask.php =====
+
+This helper script is a utility to manually execute one task inside a given workflow against a given entity in the system. We basically use this to debug workflows that fail for some reason and have more than one task. Once you know which task is failing you can concentrate on that one to debug it.
 ===== installmodule.php =====
 This is an example script to show how to install a module from it's manifest.xml file when all files are already copied into place in the filesytem
 
