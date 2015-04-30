@@ -97,3 +97,7 @@ Now copy the get_history function from Accounts.php (for example) and adapt acco
 [[http://crmevolutivo.com/forum/viewtopic.php?f=4&t=2134|Ejemplo Contactos-Comentarios]]
 
 Thanks Agamenon
+
+=====Adding a related list to an existing module without modifying it's code=====
+
+Since November 2014 the application has a way of adding related lists to a module without having to modify it's main class. [[en:devel:corebos_hooks#related_list_hook|Read all about it on the hooks wiki page!]]

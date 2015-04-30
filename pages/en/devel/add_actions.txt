@@ -67,7 +67,18 @@ We have two possible options on the list view. The **LISTVIEWBASIC** value will 
 
 We have three types of possible actions on the detail view screen. The **DETAILVIEWBASIC** option will add a link to the right action panel, at the same level as the normal existing links. The **DETAILVIEW** option will add the link inside a "More Actions" drop down menu. This is useful when we have many options.
 
-Finally the **DETAILVIEWWIDGET** option will permit us to add a small widget within which we will be able to execute some actions. Very useful to add functionality to the module.
+Finally the **DETAILVIEWWIDGET** option will permit us to add a small widget (box) on the right action panel, within which we will be able to execute some actions. Very useful to add functionality to the module.
+
+The **DETAILVIEWWIDGET** URL is called within the context of the application, it does not need index.php because that will be called always. You simply have to add the MVC parameters. This will normally be in the form;
+
+<code>module={MODULE}&action={MODULE}Ajax&file={ACTION}...</code>
+
+<WRAP center round info 80%>As of coreBOS January 2015 any javascript code sent with the widget content will be executed automatically making it easy to load some additional libraries and/or execute some process.
+
+You can study the [[https://github.com/tsolucio/Timecontrol|Timecontrol]] module stop watch widget and also the [[https://github.com/tsolucio/corebos/commit/cbfb301b12688d260fc3c5d7144cdea163da5868|Mass Image Upload widget on Products]]</WRAP>
+
+
+
 ===== Other Action links =====
 
 Three other types of links exist that will permit us to insert CSS (**HEADERCSS**), javascript (**HEADERSCRIPT**) and a global drop down menu (**HEADERLINK**) with actions on the upper right button bar. See the next section for more information.
@@ -80,7 +91,7 @@ Three other types of links exist that will permit us to insert CSS (**HEADERCSS*
 |LISTVIEW|Drop down menu on the list view|
 |DETAILVIEW|Drop down menu on the right action panel in detail view|
 |DETAILVIEWBASIC|Link on the right action panel in detail view|
-|DETAILVIEWWIDGET|Small widget block section at the bottom of the right action panel on detail view. Look at the Timecontrol stopwatch for an example.|
+|DETAILVIEWWIDGET|Small widget block section at the bottom of the right action panel on detail view. Look at the Timecontrol stopwatch for an example. It can also be a [[en:devel:add_special_block|full fledged block inserted into the existing field blocks]]|
 |HEADERSCRIPT|The link will be treated as a javascript type and will be imported in the head section of the HTML output page as <script type='text/javascript' src='linkurl'></script>|
 |HEADERCSS|The link will be treated as a CSS type and will be imported in the head section of the HTML output page as <link rel='stylesheet' type='text/css' href='linkurl>|
-|HEADERLINK|You can see these link grouped under More on the top header panel. Useful if you want to provide utitlity tools like Bookmarklet etc.|
+|HEADERLINK|You can see these link grouped under More on the top header panel. Useful if you want to provide utility tools like Bookmarklet etc.|
