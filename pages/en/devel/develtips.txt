@@ -237,3 +237,163 @@ index d0feb0a..72db333 100755
  }
  //to select Quote Popup
  function selectQuote()</code>
+
+
+??? How can I make the related to field in Calendar mandatory?
+
+!!! With a quick and dirty code hack :-)
+
+{{:devel:patches:calendarrelatedtomandatory.diff|make the related to field in Calendar mandatory}}
+
+??? How can I get a blank currency field instead of 0?
+
+!!! More or less like this:
+
+{{:devel:blankinsteadofzero.diff|}}
+
+??? How can I add a module to an existing uitype10 field? or, How can I relate a module with another module that already has a uitype 10 field for relations?
+
+!!! This is very easy with vtlib. Simply get an instance of the field you want to modify and use the setRelatedModules() method. Have a look at the code below:
+
+<code php><?php
+// Turn on debugging level
+$Vtiger_Utils_Log = true;
+
+include_once('vtlib/Vtiger/Module.php');
+
+$modname = 'Potentials';
+$module = Vtiger_Module::getInstance($modname);
+
+if($module) {
+	$field = Vtiger_Field::getInstance('related_to',$module);
+	$field->setRelatedModules(Array('Invoice'));
+
+	echo "<br><b>Modified Field on $modname module.</b><br>";
+
+} else {
+	echo "<b>Failed to find $modname module.</b><br>";
+}
+
+?></code>
+
+??? How can I get the SQL constructed for a Report?
+
+!!! Applying this patch:
+<code php>diff --git a/modules/Reports/ReportRun.php b/modules/Reports/ReportRun.php
+index 6f22783..2b6810c 100644
+--- a/modules/Reports/ReportRun.php
++++ b/modules/Reports/ReportRun.php
+@@ -1905,6 +1905,7 @@ class ReportRun extends CRMEntity
+             $reportquery = $this->replaceSpecialChar($report);
+         }
+ 		$log->info("ReportRun :: Successfully returned sGetSQLforReport".$reportid);
++		echo $reportquery;
+ 		return $reportquery;
+ 
+ 	}
+</code>
+
+??? How can I get the SQL constructed for a List View?
+
+!!! Applying this patch:
+<code php>diff --git a/modules/Vtiger/ListView.php b/modules/Vtiger/ListView.php
+index 937edcd..ed5bc42 100644
+--- a/modules/Vtiger/ListView.php
++++ b/modules/Vtiger/ListView.php
+@@ -149,7 +149,7 @@ if(!empty($order_by)) {
+ 		$list_query .= ' ORDER BY ' . $tablename . $order_by . ' ' . $sorder;
+ 	}
+ }
+-
++echo $list_query;
+ //Postgres 8 fixes
+ if( $adb->dbType == "pgsql")
+ 	$list_query = fixPostgresQuery( $list_query, $log, 0);
+</code>
+
+??? How can I get the SQL constructed for a Report?
+
+!!! Applying this patch:
+<code php>diff --git a/modules/Reports/ReportRun.php b/modules/Reports/ReportRun.php
+index 6f22783..2b6810c 100644
+--- a/modules/Reports/ReportRun.php
++++ b/modules/Reports/ReportRun.php
+@@ -1905,6 +1905,7 @@ class ReportRun extends CRMEntity
+             $reportquery = $this->replaceSpecialChar($report);
+         }
+ 		$log->info("ReportRun :: Successfully returned sGetSQLforReport".$reportid);
++		echo $reportquery;
+ 		return $reportquery;
+ 
+ 	}
+</code>
+
+??? How can I activate workflows when importing records?
+
+!!! The import module set variable $VTIGER_BULK_SAVE_MODE = true , to not load the events to execute workflows.
+When you need to execute workflows when import records, you can apply the next patch. This patch force the validation to isBulkSaveMode, with this the workflows always will be load in any part of code.
+
+After your importation, remember to undo the patch.
+
+<code php>
+diff --git a/data/CRMEntity.php b/data/CRMEntity.php
+index 30b7c2e..c737722 100755
+--- a/data/CRMEntity.php
++++ b/data/CRMEntity.php
+@@ -48,6 +48,7 @@ class CRMEntity {
+         * to improve performance.
+         */
+        static function isBulkSaveMode() {
++               return false;
+                global $VTIGER_BULK_SAVE_MODE;
+                if (isset($VTIGER_BULK_SAVE_MODE) && $VTIGER_BULK_SAVE_MODE) {
+                        return true;
+</code>
+
+??? How can I save() a record in a custom workflow function without launching the workflows and events again?
+
+!!! Instead of calling save(), use saveentity(), that will not trigger the workflows again.
+
+<WRAP center round info 70%>The answer to this is not only for workflow custom functions but in general whenever we need to save a record without launching workflow or events.</WRAP>
+
+??? A question regarding the functions to add in common utils, for example google drive file saving. For that I need to create a function in utils files and need to use those either in save.php file or in custom workflow functions. Is it a good idea?
+
+!!! I would suggest that you add your function and libraries in the event/custom code that you create. For example, suppose that you need to include some google drive library and some new functions to the save event of a document. You decide to add a **vtiger.aftersave** event. In the file where your new functionality resides you will add the library include at the beginning and your functions inside the new class so you don't need to modify the common utils base code. Something like this:
+
+<code php><?php
+require_once('google drive library');
+
+class YourCustomEventHandlerClass extends VTEventHandler {
+
+    function YourNewFunction() {
+     ...
+    }
+
+    function handleEvent($eventName, $entityData) {
+      global $log, $adb;
+      ...
+      $this->YourNewFunction();
+      ...
+    }
+}
+?></code>
+
+??? I get an SQL error when launching the FAQ custom field support changeset. What can I do to fix it?
+
+!!! It seems that your database can't setup the foreign key constraint for some reason. The correct path would be to review your data and make sure it is correct. In other words, the SQL must work, if it doesn't there is some inconsistency in your FAQ table. As an extreme case you can eliminate the constraint, the program will work the same and you will have custom field support on the FAQ module, simply the information in those custom fields will not be deleted when you eliminate a FAQ. Here is the change:
+
+<code>diff --git a/build/changeSets/cffaq.php b/build/changeSets/cffaq.php
+index 3a10292..cf4896a 100644
+--- a/build/changeSets/cffaq.php
++++ b/build/changeSets/cffaq.php
+@@ -23,8 +23,7 @@ class cffaq extends cbupdaterWorker {
+                } else {
+                        $this->ExecuteQuery("CREATE TABLE IF NOT EXISTS vtiger_faqcf (
+                                                faqid int(19),
+-                                               PRIMARY KEY (faqid),
+-                                               CONSTRAINT fk_1_vtiger_faqcf FOREIGN KEY (faqid) REFERENCES vtiger_faq(id) ON DELETE CASCADE
++                                               PRIMARY KEY (faqid)
+                                                ) ENGINE=InnoDB DEFAULT CHARSET=utf8", array());
+                        $this->sendMsg('Changeset '.get_class($this).' applied!');
+                        $this->markApplied();
+</code>
