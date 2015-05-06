@@ -62,6 +62,7 @@ index c52dd76..a42eb3c 100644
 
 Also, the ajax call in the browser can be seen and is very useful also to see the raw result (Firebug is your friend)
 
+Additionally, one of our former team members {{:devel:patches:debug_webservices.diff|used this patch}}, which produces the error on screen or in the AJAX response.
 =====Email=====
 
 [[en:configureoutgoingserver|Have a read here about how coreBOS outgoing email server works and how to configure it]].
