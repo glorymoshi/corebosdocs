@@ -7,3 +7,4 @@
   * [[using_filters|Using and Defining Filters]]
   * [[helpdesk|HelpDesk]]
   * [[calendar|Calendar]]
+  * [[reporting|Reporting]]

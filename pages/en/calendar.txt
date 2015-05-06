@@ -136,3 +136,7 @@ The new Calendar also provides the possibility to assign documents to events or 
 ===== Google Integration =====
 
 [[calendar_google_integration|Calendar Google Integration]]
+
+===== Development =====
+
+[[en:devel:calendar|Calendar Development]]
