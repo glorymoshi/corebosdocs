@@ -1,6 +1,11 @@
 ====== How to fill in additional fields when selecting a record in a popup screen ======
 
-In vtiger CRM 5.x and coreBOS 5.x, this task is still cumbersome and requires code modifications.
+<WRAP center round important 80%>
+This article is obsolete! As of December 2014 we have a hook to make this easy without the need of modifying any base application code. [[en:devel:corebos_hooks#popup_capture_hook|Read all about it on the Hooks wiki page!]].
+</WRAP>
+
+
+In vtiger CRM 5.x and coreBOS code prior to December 2014, this task is still cumbersome and requires code modifications.
 
 This page describes the process by documenting the answer given by srhtech in the vtiger CRM forum thread [[https://discussions.vtiger.com/index.php?p=/discussion/172541/quote-information-mapping-when-adding-orginzation|Quote information mapping when adding orginzation]].
 

@@ -29,7 +29,7 @@ If you are trying to get this working on a vtiger CRM 5.4 (6.x), we have had to 
   * ~~issue:163~~
   * ~~issue:164~~
 
-{{:en:coreboscp:coreboscp_vt54.zip|This patch and fileset}} should do the trick but it is obsolete, the tickets above describe much better the necessary code changes. Copy the files into the root of your install, apply the patch to the code and execute the SQL in your database.
+{{:en:coreboscp:coreboscp_vt54.zip|This patch and file set}} should do the trick but it is obsolete, the tickets above describe much better the necessary code changes. Copy the files into the root of your install, apply the patch to the code and execute the SQL in your database.
 <WRAP center round alert 70%>
 Please backup your code and database before applying to any production site and please test on a copy before doing so.
 </WRAP>
