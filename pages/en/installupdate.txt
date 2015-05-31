@@ -24,6 +24,7 @@ How to install and update the application
 
   * [[en:devel:thirdparty|FAQ]]
   * [[vtdziner|vtDZiner]]
+  * [[geotools|GeoTools]]
 ====== Frequently Asked Questions ======
 
   * [[installfaq|Installation FAQ]]
